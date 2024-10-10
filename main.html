@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        .company-name {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .search-bar {
+            margin-bottom: 10px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product Table</h1>
+    <p>List Number: 1</p>
+    <p>Current Date: <span id="current-date"></span></p>
+    <div class="container">
+        <!-- Select Shop -->
+        <div class="shop-section">
+          <label for="shop-name">Select Shop:</label>
+          <select id="shop-name">
+            <option value="Shop 1">MEHRAN BAKERY NO.2</option>
+            <option value="Shop 2">AHMED MINI MART NO.2</option>
+          </select>
+        </div>
+    
+        <!-- Payment Mode -->
+        <div class="payment-section">
+          <label for="payment-mode">Payment Mode:</label>
+          <select id="payment-mode" onchange="handlePaymentChange()">
+            <option value="cash">Cash</option>
+            <option value="credit">Credit</option>
+          </select>
+        </div>
+    
+        <!-- Credit Options -->
+        <div id="credit-options" style="display: none;">
+          <label for="credit-type">Select Credit Type:</label>
+          <select id="credit-type">
+            <option value="bill-sign">Bill Sign</option>
+            <option value="cheque">Cheque</option>
+          </select>
+    
+          <p><strong>Previous Balance Receivable: $200</strong></p>
+        </div>
+        
+    
+    <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products..">
+    
+    <button id="loadDataBtn">Load Product Data</button>
+
+<table id="productTable">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data will be inserted here -->
+    </tbody>
+</table>
+
+            <!-- <tr class="company-name"><td colspan="5">Company B</td></tr>
+            <tr>
+                <td>003</td>
+                <td>Item 3</td>
+                <td><input type="number" name="orderQty3"></td>
+                <td>$30</td>
+                <td>$25</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Item 4</td>
+                <td><input type="number" name="orderQty4"></td>
+                <td>$40</td>
+                <td>$35</td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <br>
+    <label for="userName">Enter Your Name: </label>
+    <input type="text" id="userName" name="userName" required>
+
+    <div class="button-group">
+        <button onclick="previewTable()">Preview</button>
+        <button onclick="sendWhatsApp()">Send WhatsApp</button>
+        <button onclick="generatePDF()">Generate PDF</button>
+    </div>
+    </div>  
+
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+
+        function handlePaymentChange() {
+            const paymentMode = document.getElementById('payment-mode').value;
+            const creditOptions = document.getElementById('credit-options');
+            creditOptions.style.display = paymentMode === 'credit' ? 'block' : 'none';
+        }
+
+        function searchTable() {
+            let input = document.getElementById('searchBar').value.toUpperCase();
+            let table = document.getElementById('productTable');
+            let tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    let txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(input) > -1) {
+                        tr[i].style.display = '';
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        document.getElementById('loadDataBtn').addEventListener('click', function() {
+    fetch('PRODUCTS.json') // Or 'products.html' for HTML files
+        .then(response => response.json()) // Use .text() for HTML
+        .then(data => {
+            const tableBody = document.querySelector('#productTable tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            data.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.ProductID}</td>
+                    <td>${product.ProductName}</td>
+                    <td>${product.RetailPrice}</td>
+                    <td>${product.OfferPrice}</td>
+                    <td>${product.Order}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error loading data:', error));
+});
+
+
+        function previewTable() {
+            let table = document.getElementById('productTable');
+            let tr = table.getElementsByTagName('tr');
+            let previewWindow = window.open('', '', 'width=800,height=600');
+            previewWindow.document.write('<table border="1">');
+            previewWindow.document.write('<tr><th>Code</th><th>Item Name</th><th>Order Quantity</th><th>Retail Price</th><th>Offer Price</th></tr>');
+
+            for (let i = 1; i < tr.length; i++) {
+                let orderQty = tr[i].getElementsByTagName('input')[0];
+                if (orderQty && orderQty.value > 0) {
+                    previewWindow.document.write('<tr>');
+                    for (let j = 0; j < tr[i].cells.length; j++) {
+                        if (j === 2) {
+                            previewWindow.document.write('<td>' + orderQty.value + '</td>');
+                        } else {
+                            previewWindow.document.write('<td>' + tr[i].cells[j].innerHTML + '</td>');
+                        }
+                    }
+                    previewWindow.document.write('</tr>');
+                }
+            }
+            previewWindow.document.write('</table>');
+            previewWindow.document.close();
+        }
+
+        function sendWhatsApp() {
+            let table = document.getElementById('productTable');
+            let tr = table.getElementsByTagName('tr');
+            let msg = 'Product Table\n';
+
+            for (let i = 1; i < tr.length; i++) {
+                let orderQty = tr[i].getElementsByTagName('input')[0];
+                if (orderQty && orderQty.value > 0) {
+                    msg += '\n' + tr[i].cells[0].innerHTML + ' ' + tr[i].cells[1].innerHTML + ' ' + orderQty.value + ' ' + tr[i].cells[3].innerHTML + ' ' + tr[i].cells[4].innerHTML;
+                }
+            }
+
+            let encodedMsg = encodeURIComponent(msg);
+            window.open('https://wa.me/?text=' + encodedMsg, '_blank');
+        }
+
+        function generatePDF() {
+            let table = document.getElementById('productTable');
+            let tr = table.getElementsByTagName('tr');
+            let doc = new jsPDF();
+
+            doc.text('Product Table', 14, 16);
+            doc.autoTable({ html: '#productTable' });
+
+            doc.save('table.pdf');
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
+
+</body>
+</html>

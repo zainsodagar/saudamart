@@ -1,0 +1,100 @@
+[
+    {
+        "ProductID": 1,
+        "ProductName": "ACTIV BAR  (PAKISTANI) 75 GM",
+        "RetailPrice": null,
+        "OfferPrice": 13,
+        "Order": 0
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "SURF EXCEL  1  KG",
+        "RetailPrice": 549,
+        "OfferPrice": 505,
+        "Order": 0
+    },
+    {
+        "ProductID": 3,
+        "ProductName": "BONUS TRISTAR 1O WALA",
+        "RetailPrice": 120,
+        "OfferPrice": 114,
+        "Order": 0
+    },
+    {
+        "ProductID": 4,
+        "ProductName": "BONUS TRISTAR 5O WALA",
+        "RetailPrice": 50,
+        "OfferPrice": 48,
+        "Order": 0
+    },
+    {
+        "ProductID": 5,
+        "ProductName": "BONUS TRISTAR 99 WALA",
+        "RetailPrice": 99,
+        "OfferPrice": 95,
+        "Order": 0
+    },
+    {
+        "ProductID": 6,
+        "ProductName": "BONUS TRISTAR 1 KG",
+        "RetailPrice": 230,
+        "OfferPrice": 220,
+        "Order": 0
+    },
+    {
+        "ProductID": 7,
+        "ProductName": "BRITE 1O WALA",
+        "RetailPrice": 120,
+        "OfferPrice": 114,
+        "Order": 0
+    },
+    {
+        "ProductID": 8,
+        "ProductName": "BRITE 5O WALA",
+        "RetailPrice": 50,
+        "OfferPrice": 48,
+        "Order": 0
+    },
+    {
+        "ProductID": 9,
+        "ProductName": "BRITE  1  KG",
+        "RetailPrice": 549,
+        "OfferPrice": 505,
+        "Order": 0
+    },
+    {
+        "ProductID": 10,
+        "ProductName": "LEMON MAX LIQUID  275  ML",
+        "RetailPrice": 165,
+        "OfferPrice": 157,
+        "Order": 0
+    },
+    {
+        "ProductID": 11,
+        "ProductName": "LEMON MAX LIQUID  475  ML ",
+        "RetailPrice": 255,
+        "OfferPrice": 240,
+        "Order": 0
+    },
+    {
+        "ProductID": 12,
+        "ProductName": "LEMON MAX LIQUID  125  ML  POUCH",
+        "RetailPrice": 50,
+        "OfferPrice": 48,
+        "Order": 0
+    },
+    {
+        "ProductID": 13,
+        "ProductName": "LEMON MAX LIQUID  475  ML  POUCH",
+        "RetailPrice": 210,
+        "OfferPrice": 195,
+        "Order": 0
+    },
+    {
+        "ProductID": 14,
+        "ProductName": "LEMON MAX BAR SINGLE",
+        "RetailPrice": 75,
+        "OfferPrice": 71,
+        "Order": 0
+    }
+]
