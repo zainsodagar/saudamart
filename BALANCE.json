@@ -1,10 +1,8 @@
-[
-    {
-        "ShopName": "MEHRAN BAKERY NO.2",
-        "PreviousBalance": 91336
+{
+    "MEHRAN BAKERY NO.2": {
+        "previousBalance": 91336
     },
-    {
-        "ShopName": "AHMED MINI MART NO.2",
-        "PreviousBalance": 49997
+    "AHMED MINI MART NO.2": {
+        "previousBalance": 49997
     }
-]
+}
