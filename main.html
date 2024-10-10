@@ -31,11 +31,12 @@
     <h1>Product Table</h1>
     <p>List Number: 1</p>
     <p>Current Date: <span id="current-date"></span></p>
+    
     <div class="container">
         <!-- Select Shop -->
         <div class="shop-section">
           <label for="shop-name">Select Shop:</label>
-          <select id="shop-name">
+          <select id="shop-name" onchange="updatePreviousBalance()">
             <option value="Shop 1">MEHRAN BAKERY NO.2</option>
             <option value="Shop 2">AHMED MINI MART NO.2</option>
           </select>
@@ -57,57 +58,36 @@
             <option value="bill-sign">Bill Sign</option>
             <option value="cheque">Cheque</option>
           </select>
-    
-          <p><strong>Previous Balance Receivable: $200</strong></p>
+          <p id="previous-balance-display"></p>
         </div>
         
-    
-    <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products..">
-    
-    <button id="loadDataBtn">Load Product Data</button>
+        <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products..">
+        
+        <button id="loadDataBtn">Load Product Data</button>
 
-<table id="productTable">
-    <thead>
-        <tr>
-            <th>Product ID</th>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Data will be inserted here -->
-    </tbody>
-</table>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Retail Price</th>
+                    <th>Offer Price</th>
+                    <th>Order Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
 
-            <!-- <tr class="company-name"><td colspan="5">Company B</td></tr>
-            <tr>
-                <td>003</td>
-                <td>Item 3</td>
-                <td><input type="number" name="orderQty3"></td>
-                <td>$30</td>
-                <td>$25</td>
-            </tr>
-            <tr>
-                <td>004</td>
-                <td>Item 4</td>
-                <td><input type="number" name="orderQty4"></td>
-                <td>$40</td>
-                <td>$35</td>
-            </tr> -->
-        </tbody>
-    </table>
+        <label for="userName">Enter Your Name: </label>
+        <input type="text" id="userName" name="userName" required>
 
-    <br>
-    <label for="userName">Enter Your Name: </label>
-    <input type="text" id="userName" name="userName" required>
-
-    <div class="button-group">
-        <button onclick="previewTable()">Preview</button>
-        <button onclick="sendWhatsApp()">Send WhatsApp</button>
-        <button onclick="generatePDF()">Generate PDF</button>
-    </div>
+        <div class="button-group">
+            <button onclick="previewTable()">Preview</button>
+            <button onclick="sendWhatsApp()">Send WhatsApp</button>
+            <button onclick="generatePDF()">Generate PDF</button>
+        </div>
     </div>  
 
     <script>
@@ -119,65 +99,84 @@
             creditOptions.style.display = paymentMode === 'credit' ? 'block' : 'none';
         }
 
+        function updatePreviousBalance() {
+            const shopName = document.getElementById('shop-name').value;
+            fetch('BALANCE.json')
+                .then(response => response.json())
+                .then(data => {
+                    const previousBalance = data[shopName].previousBalance;
+                    document.getElementById('previous-balance-display').innerHTML = `Previous Balance Receivable: $${previousBalance}`;
+                })
+                .catch(error => console.error('Error loading balance data:', error));
+        }
+
         function searchTable() {
             let input = document.getElementById('searchBar').value.toUpperCase();
             let table = document.getElementById('productTable');
             let tr = table.getElementsByTagName('tr');
 
             for (let i = 1; i < tr.length; i++) {
-                let td = tr[i].getElementsByTagName('td')[1];
+                let td = tr[i].getElementsByTagName('td')[1]; // Search by Product Name
                 if (td) {
                     let txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(input) > -1) {
-                        tr[i].style.display = '';
-                    } else {
-                        tr[i].style.display = 'none';
-                    }
+                    tr[i].style.display = txtValue.toUpperCase().indexOf(input) > -1 ? '' : 'none';
                 }
             }
         }
 
         document.getElementById('loadDataBtn').addEventListener('click', function() {
-    fetch('PRODUCTS.json') // Or 'products.html' for HTML files
-        .then(response => response.json()) // Use .text() for HTML
-        .then(data => {
-            const tableBody = document.querySelector('#productTable tbody');
-            tableBody.innerHTML = ''; // Clear existing rows
+            fetch('PRODUCTS.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#productTable tbody');
+                    tableBody.innerHTML = ''; // Clear existing rows
 
-            data.forEach(product => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${product.ProductID}</td>
-                    <td>${product.ProductName}</td>
-                    <td>${product.RetailPrice}</td>
-                    <td>${product.OfferPrice}</td>
-                    <td><input type="number" value="${product.orderQty}" min="0" /></td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error loading data:', error));
-});
-
+                    data.forEach(product => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.ProductID}</td>
+                            <td>${product.ProductName}</td>
+                            <td>$${product.RetailPrice}</td>
+                            <td>$${product.OfferPrice}</td>
+                            <td><input type="number" value="${product.orderQty || 0}" min="0" /></td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error loading data:', error));
+        });
 
         function previewTable() {
             let table = document.getElementById('productTable');
             let tr = table.getElementsByTagName('tr');
             let previewWindow = window.open('', '', 'width=800,height=600');
+
+            // Get selected shop name, payment mode, credit type, and previous balance
+            let shopName = document.getElementById('shop-name').value;
+            let paymentMode = document.getElementById('payment-mode').value;
+            let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
+            let previousBalance = document.getElementById('previous-balance-display').textContent; // Get previous balance text
+            let currentDate = new Date().toLocaleDateString();
+
+            // Set the preview title
+            previewWindow.document.write(`<h2>${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}</h2>`);
             previewWindow.document.write('<table border="1">');
-            previewWindow.document.write('<tr><th>Code</th><th>Item Name</th><th>Order Quantity</th><th>Retail Price</th><th>Offer Price</th></tr>');
+            previewWindow.document.write('<tr><th>Product ID</th><th>Product Name</th><th>Order Quantity</th><th>Retail Price</th><th>Offer Price</th><th>Total Amount</th></tr>');
 
             for (let i = 1; i < tr.length; i++) {
-                let orderQty = tr[i].getElementsByTagName('input')[0];
-                if (orderQty && orderQty.value > 0) {
+                let orderQtyInput = tr[i].getElementsByTagName('input')[0];
+                let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0; // Get the order quantity
+                let retailPrice = parseFloat(tr[i].cells[2].textContent.replace('$', '')) || 0; // Get retail price
+                let totalAmount = orderQty * retailPrice; // Calculate total amount
+
+                if (orderQty > 0) { // Only show rows with order quantity greater than 0
                     previewWindow.document.write('<tr>');
-                    for (let j = 0; j < tr[i].cells.length; j++) {
-                        if (j === 2) {
-                            previewWindow.document.write('<td>' + orderQty.value + '</td>');
-                        } else {
-                            previewWindow.document.write('<td>' + tr[i].cells[j].innerHTML + '</td>');
-                        }
-                    }
+                    previewWindow.document.write('<td>' + tr[i].cells[0].innerHTML + '</td>'); // Product ID
+                    previewWindow.document.write('<td>' + tr[i].cells[1].innerHTML + '</td>'); // Product Name
+                    previewWindow.document.write('<td>' + orderQty + '</td>'); // Order Quantity
+                    previewWindow.document.write('<td>' + tr[i].cells[2].innerHTML + '</td>'); // Retail Price
+                    previewWindow.document.write('<td>' + tr[i].cells[3].innerHTML + '</td>'); // Offer Price
+                    previewWindow.document.write('<td>$' + totalAmount.toFixed(2) + '</td>'); // Total Amount
                     previewWindow.document.write('</tr>');
                 }
             }
@@ -188,17 +187,31 @@
         function sendWhatsApp() {
             let table = document.getElementById('productTable');
             let tr = table.getElementsByTagName('tr');
-            let msg = 'Product Table\n';
+            let msg = 'Product Order Details\n';
+
+            // Get selected shop name, payment mode, credit type, and previous balance
+            let shopName = document.getElementById('shop-name').value;
+            let paymentMode = document.getElementById('payment-mode').value;
+            let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
+            let previousBalance = document.getElementById('previous-balance-display').textContent; // Get previous balance text
+            let currentDate = new Date().toLocaleDateString();
+
+            msg += `${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}`;
+            msg += '\n\nOrder Details:';
 
             for (let i = 1; i < tr.length; i++) {
-                let orderQty = tr[i].getElementsByTagName('input')[0];
-                if (orderQty && orderQty.value > 0) {
-                    msg += '\n' + tr[i].cells[0].innerHTML + ' ' + tr[i].cells[1].innerHTML + ' ' + orderQty.value + ' ' + tr[i].cells[3].innerHTML + ' ' + tr[i].cells[4].innerHTML;
+                let orderQtyInput = tr[i].getElementsByTagName('input')[0];
+                let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0; // Get the order quantity
+                let retailPrice = parseFloat(tr[i].cells[2].textContent.replace('$', '')) || 0; // Get retail price
+                let totalAmount = orderQty * retailPrice; // Calculate total amount
+
+                if (orderQty > 0) { // Only show rows with order quantity greater than 0
+                    msg += `\n${tr[i].cells[1].innerHTML} - Order Quantity: ${orderQty} - Total Amount: $${totalAmount.toFixed(2)}`;
                 }
             }
 
-            let encodedMsg = encodeURIComponent(msg);
-            window.open('https://wa.me/?text=' + encodedMsg, '_blank');
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+            window.open(whatsappUrl, '_blank');
         }
 
         function generatePDF() {
@@ -206,15 +219,48 @@
             let tr = table.getElementsByTagName('tr');
             let doc = new jsPDF();
 
-            doc.text('Product Table', 14, 16);
-            doc.autoTable({ html: '#productTable' });
+            // Get selected shop name, payment mode, credit type, and previous balance
+            let shopName = document.getElementById('shop-name').value;
+            let paymentMode = document.getElementById('payment-mode').value;
+            let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
+            let previousBalance = document.getElementById('previous-balance-display').textContent; // Get previous balance text
+            let currentDate = new Date().toLocaleDateString();
+            
+            // Set the PDF title
+            let fileName = `${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}.pdf`;
+            
+            doc.text(`Order Details\n`, 10, 10);
+            doc.text(`${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}`, 10, 20);
+            doc.autoTable({
+                head: [['Product ID', 'Product Name', 'Order Quantity', 'Retail Price', 'Offer Price', 'Total Amount']],
+                body: [],
+                startY: 30,
+            });
 
-            doc.save('table.pdf');
+            for (let i = 1; i < tr.length; i++) {
+                let orderQtyInput = tr[i].getElementsByTagName('input')[0];
+                let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0; // Get the order quantity
+                let retailPrice = parseFloat(tr[i].cells[2].textContent.replace('$', '')) || 0; // Get retail price
+                let totalAmount = orderQty * retailPrice; // Calculate total amount
+
+                if (orderQty > 0) { // Only show rows with order quantity greater than 0
+                    doc.autoTable({
+                        body: [[
+                            tr[i].cells[0].innerHTML, // Product ID
+                            tr[i].cells[1].innerHTML, // Product Name
+                            orderQty,                  // Order Quantity
+                            tr[i].cells[2].innerHTML, // Retail Price
+                            tr[i].cells[3].innerHTML, // Offer Price
+                            `$${totalAmount.toFixed(2)}` // Total Amount
+                        ]]
+                    });
+                }
+            }
+
+            doc.save(fileName);
         }
     </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.11/jspdf.plugin.autotable.min.js"></script>
 </body>
 </html>
