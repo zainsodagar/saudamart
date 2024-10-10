@@ -103,8 +103,8 @@
         function updatePreviousBalance() {
              const shopName = document.getElementById('shop-name').value;
              console.log(`Selected shop: ${shopName}`); // Debugging line
-
-        fetch('BALANCE.json')
+             
+             fetch('https://www.mediafire.com/file/m3vp2fbhcysiuhb/BALANCE.json/file')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
