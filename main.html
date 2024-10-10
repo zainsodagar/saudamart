@@ -37,8 +37,8 @@
         <div class="shop-section">
           <label for="shop-name">Select Shop:</label>
           <select id="shop-name" onchange="updatePreviousBalance()">
-            <option value="Shop 1">MEHRAN BAKERY NO.2</option>
-            <option value="Shop 2">AHMED MINI MART NO.2</option>
+            <option value="MEHRAN BAKERY NO.2">MEHRAN BAKERY NO.2</option>
+            <option value="AHMED MINI MART NO.2">AHMED MINI MART NO.2</option>
           </select>
         </div>
     
@@ -58,7 +58,8 @@
             <option value="bill-sign">Bill Sign</option>
             <option value="cheque">Cheque</option>
           </select>
-          <p id="previous-balance-display"></p>
+          <p id="previousBalanceDisplay"><strong>Previous Balance: Rs.0</strong></p>
+
         </div>
         
         <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products..">
@@ -100,15 +101,56 @@
         }
 
         function updatePreviousBalance() {
-            const shopName = document.getElementById('shop-name').value;
-            fetch('BALANCE.json')
-                .then(response => response.json())
-                .then(data => {
-                    const previousBalance = data[shopName].previousBalance;
-                    document.getElementById('previous-balance-display').innerHTML = `Previous Balance Receivable: $${previousBalance}`;
-                })
-                .catch(error => console.error('Error loading balance data:', error));
-        }
+             const shopName = document.getElementById('shop-name').value;
+             console.log(`Selected shop: ${shopName}`); // Debugging line
+
+        fetch('BALANCE.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Fetched data:', data); // Debugging line
+            const previousBalance = data[shopName]?.previousBalance;
+            console.log(`Previous balance for ${shopName}: Rs.${previousBalance}`); // Debugging line
+            document.getElementById('previousBalanceDisplay').innerHTML = `Previous Balance: Rs.${previousBalance !== undefined ? previousBalance : 0}`;
+        })
+        .catch(error => console.error('Error loading balance data:', error));
+}
+
+
+        
+        // Load the balance data from JSON
+    function loadBalanceData() {
+        fetch('BALANCE.json')
+            .then(response => response.json())
+            .then(data => {
+                const selectedShop = document.getElementById('shop-name').value;
+                const previousBalanceDisplay = document.getElementById('previousBalanceDisplay');
+
+                // Find the previous balance for the selected shop
+                const balance = data[selectedShop]?.previousBalance;
+
+                if (balance !== undefined) {
+                    previousBalanceDisplay.textContent = `Previous Balance: Rs.${balance}`;
+                } else {
+                    previousBalanceDisplay.textContent = 'Previous Balance: Rs.0';
+                }
+            })
+            .catch(error => console.error('Error loading balance data:', error));
+    }
+
+    // Set event listener on shop selection
+    document.getElementById('shop-name').addEventListener('change', updatePreviousBalance);
+
+    // Initial load of the balance data when the page loads
+    window.onload = function() {
+    //loadBalanceData(); // Ensure this function is defined to initially load the balance
+    updatePreviousBalance(); // Ensure previous balance is updated on load
+};
+
 
         function searchTable() {
             let input = document.getElementById('searchBar').value.toUpperCase();
@@ -155,7 +197,7 @@
             let shopName = document.getElementById('shop-name').value;
             let paymentMode = document.getElementById('payment-mode').value;
             let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
-            let previousBalance = document.getElementById('previous-balance-display').textContent; // Get previous balance text
+            let previousBalance = document.getElementById('previousBalanceDisplay').textContent; // Get previous balance text
             let currentDate = new Date().toLocaleDateString();
 
             // Set the preview title
@@ -167,7 +209,8 @@
                 let orderQtyInput = tr[i].getElementsByTagName('input')[0];
                 let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0; // Get the order quantity
                 let retailPrice = parseFloat(tr[i].cells[2].textContent.replace('$', '')) || 0; // Get retail price
-                let totalAmount = orderQty * retailPrice; // Calculate total amount
+                let totalAmount = orderQty * OfferPrice; // Calculate total amount
+                
 
                 if (orderQty > 0) { // Only show rows with order quantity greater than 0
                     previewWindow.document.write('<tr>');
@@ -193,7 +236,7 @@
             let shopName = document.getElementById('shop-name').value;
             let paymentMode = document.getElementById('payment-mode').value;
             let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
-            let previousBalance = document.getElementById('previous-balance-display').textContent; // Get previous balance text
+            let previousBalance = document.getElementById('previousBalanceDisplay').textContent; // Get previous balance text
             let currentDate = new Date().toLocaleDateString();
 
             msg += `${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}`;
@@ -223,7 +266,7 @@
             let shopName = document.getElementById('shop-name').value;
             let paymentMode = document.getElementById('payment-mode').value;
             let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
-            let previousBalance = document.getElementById('previous-balance-display').textContent; // Get previous balance text
+            let previousBalance = document.getElementById('previousBalanceDisplay').textContent; // Get previous balance text
             let currentDate = new Date().toLocaleDateString();
             
             // Set the PDF title
