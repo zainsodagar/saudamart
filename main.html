@@ -151,7 +151,7 @@
                     <td>${product.ProductName}</td>
                     <td>${product.RetailPrice}</td>
                     <td>${product.OfferPrice}</td>
-                    <td>${product.Order}</td>
+                    <td><input type="number" value="${product.orderQty}" min="0" /></td>
                 `;
                 tableBody.appendChild(row);
             });
