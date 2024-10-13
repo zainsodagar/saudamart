@@ -145,6 +145,7 @@
         // In-memory data structure to store updated product data
         let updatedProducts = [];
 
+// Replace ondblclick with click event in the row creation logic:
 document.getElementById('loadDataBtn').addEventListener('click', function() {
     fetch('PRODUCTS.json')
         .then(response => response.json())
@@ -160,7 +161,7 @@ document.getElementById('loadDataBtn').addEventListener('click', function() {
                     <td>${product.ProductName}</td>
                     <td><input type="number" value="${product.orderQty || 0}" min="0" /></td>
                     <td>${product.RetailPrice}</td>
-                    <td ondblclick="makeEditable(this, ${index})">${product.OfferPrice}</td>
+                    <td onclick="makeEditable(this, ${index})">${product.OfferPrice}</td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -172,6 +173,7 @@ function makeEditable(td, index) {
     td.setAttribute('contenteditable', 'true');
     td.focus();
 
+    // If clicked outside the cell, save and remove editable mode
     td.addEventListener('blur', function() {
         td.removeAttribute('contenteditable');
         const newPrice = parseFloat(td.textContent);
@@ -182,9 +184,10 @@ function makeEditable(td, index) {
         }
     });
 
+    // Allow pressing 'Enter' to save changes and remove editable mode
     td.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-            td.blur();
+            td.blur();  // Simulate blur event to save the value
         }
     });
 }
