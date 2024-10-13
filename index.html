@@ -70,9 +70,9 @@
                 <tr>
                     <th>Product ID</th>
                     <th>Product Name</th>
-                    <th>Retail Price</th>
-                    <th>Offer Price</th>
                     <th>Order Quantity</th>
+                    <th>Retail Price</th>
+                    <th>Offer Price</th>                    
                 </tr>
             </thead>
             <tbody>
@@ -142,87 +142,107 @@
             }
         }
 
-        document.getElementById('loadDataBtn').addEventListener('click', function() {
-            // Replace with your actual JSON data URL
-            fetch('PRODUCTS.json')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.querySelector('#productTable tbody');
-                    tableBody.innerHTML = ''; // Clear existing rows
+        // In-memory data structure to store updated product data
+        let updatedProducts = [];
 
-                    data.forEach(product => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${product.ProductID}</td>
-                            <td>${product.ProductName}</td>
-                            <td>${product.RetailPrice}</td>
-                            <td>${product.OfferPrice}</td>
-                            <td><input type="number" value="${product.orderQty || 0}" min="0" /></td>
-                        `;
-                        tableBody.appendChild(row);
-                    });
-                })
-                .catch(error => console.error('Error loading data:', error));
-        });
+document.getElementById('loadDataBtn').addEventListener('click', function() {
+    fetch('PRODUCTS.json')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector('#productTable tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+            updatedProducts = data; // Store original product data in memory for tracking changes
 
-        function previewTable() {
+            data.forEach((product, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.ProductID}</td>
+                    <td>${product.ProductName}</td>
+                    <td><input type="number" value="${product.orderQty || 0}" min="0" /></td>
+                    <td>${product.RetailPrice}</td>
+                    <td ondblclick="makeEditable(this, ${index})">${product.OfferPrice}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error loading data:', error));
+});
+
+function makeEditable(td, index) {
+    td.setAttribute('contenteditable', 'true');
+    td.focus();
+
+    td.addEventListener('blur', function() {
+        td.removeAttribute('contenteditable');
+        const newPrice = parseFloat(td.textContent);
+        
+        // Update the offer price in the in-memory product data
+        if (!isNaN(newPrice)) {
+            updatedProducts[index].OfferPrice = newPrice;
+        }
+    });
+
+    td.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            td.blur();
+        }
+    });
+}
+
+      // Function to handle preview
+function previewTable() {
     let table = document.getElementById('productTable');
     let tr = table.getElementsByTagName('tr');
     let previewWindow = window.open('', '', 'width=800,height=600');
 
-    // Get selected shop name, payment mode, credit type, and previous balance
     let shopName = document.getElementById('shop-name').value;
     let paymentMode = document.getElementById('payment-mode').value;
     let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
-    let previousBalance = document.getElementById('previousBalanceDisplay').textContent; // Get previous balance text
+    let previousBalance = document.getElementById('previousBalanceDisplay').textContent;
     let currentDate = new Date().toLocaleDateString();
 
-    // Set the preview title
     previewWindow.document.write(`<h2>${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}</h2>`);
     previewWindow.document.write('<table border="1">');
     previewWindow.document.write('<tr><th>Product ID</th><th>Product Name</th><th>Order Quantity</th><th>Retail Price</th><th>Offer Price</th><th>Total Amount</th></tr>');
 
-    let grandTotal = 0; // Initialize grand total
+    let grandTotal = 0;
 
     for (let i = 1; i < tr.length; i++) {
         let orderQtyInput = tr[i].getElementsByTagName('input')[0];
-        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0; // Get the order quantity
-        let retailPrice = parseFloat(tr[i].cells[2].textContent) || 0; // Get retail price
-        let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0; // Get offer price
-        let totalAmount = orderQty * offerPrice; // Calculate total amount
+        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
+        let retailPrice = parseFloat(tr[i].cells[3].textContent) || 0;
+        let offerPrice = updatedProducts[i - 1].OfferPrice || 0; // Use updated offer price
+        let totalAmount = orderQty * offerPrice;
 
-        grandTotal += totalAmount; // Add to grand total
+        grandTotal += totalAmount;
 
-        if (orderQty > 0) { // Only show rows with order quantity greater than 0
+        if (orderQty > 0) {
             previewWindow.document.write('<tr>');
-            previewWindow.document.write('<td>' + tr[i].cells[0].innerHTML + '</td>'); // Product ID
-            previewWindow.document.write('<td>' + tr[i].cells[1].innerHTML + '</td>'); // Product Name
-            previewWindow.document.write('<td>' + orderQty + '</td>'); // Order Quantity
-            previewWindow.document.write('<td>' + retailPrice.toFixed(2) + '</td>'); // Retail Price
-            previewWindow.document.write('<td>' + offerPrice.toFixed(2) + '</td>'); // Offer Price
-            previewWindow.document.write('<td>' + totalAmount.toFixed(2) + '</td>'); // Total Amount
+            previewWindow.document.write('<td>' + tr[i].cells[0].innerHTML + '</td>');
+            previewWindow.document.write('<td>' + tr[i].cells[1].innerHTML + '</td>');
+            previewWindow.document.write('<td>' + orderQty + '</td>');
+            previewWindow.document.write('<td>' + retailPrice.toFixed(2) + '</td>');
+            previewWindow.document.write('<td>' + offerPrice.toFixed(2) + '</td>');
+            previewWindow.document.write('<td>' + totalAmount.toFixed(2) + '</td>');
             previewWindow.document.write('</tr>');
         }
     }
 
-    // Add row for grand total
     previewWindow.document.write('<tr><td colspan="5"><strong>Grand Total</strong></td><td>Rs.' + grandTotal.toFixed(0) + '</td></tr>');
-
     previewWindow.document.write('</table>');
     previewWindow.document.close();
 }
 
-
+// Function to handle WhatsApp message
 function sendWhatsApp() {
     let table = document.getElementById('productTable');
     let tr = table.getElementsByTagName('tr');
     let msg = 'Product Order Details\n';
 
-    // Get selected shop name, payment mode, credit type, and previous balance
     let shopName = document.getElementById('shop-name').value;
     let paymentMode = document.getElementById('payment-mode').value;
     let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
-    let previousBalance = document.getElementById('previousBalanceDisplay').textContent; // Get previous balance text
+    let previousBalance = document.getElementById('previousBalanceDisplay').textContent;
     let currentDate = new Date().toLocaleDateString();
 
     msg += `${currentDate} - ${shopName}\n`;
@@ -232,87 +252,75 @@ function sendWhatsApp() {
     let grandTotal = 0;
     for (let i = 1; i < tr.length; i++) {
         let orderQtyInput = tr[i].getElementsByTagName('input')[0];
-        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0; // Get the order quantity
-        let retailPrice = parseFloat(tr[i].cells[2].textContent) || 0; // Get retail price
-        let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0; // Get offer price
-        let totalAmount = orderQty * offerPrice; // Calculate total amount
-        grandTotal += totalAmount; // Add to grand total
+        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
+        let retailPrice = parseFloat(tr[i].cells[3].textContent) || 0;
+        let offerPrice = updatedProducts[i - 1].OfferPrice || 0; // Use updated offer price
+        let totalAmount = orderQty * offerPrice;
+        grandTotal += totalAmount;
 
-        if (orderQty > 0) { // Only show rows with order quantity greater than 0
+        if (orderQty > 0) {
             msg += `\n${orderQty} x ${tr[i].cells[1].innerHTML} @ Rs.${offerPrice.toFixed(2)} = Rs.${totalAmount.toFixed(2)}`;
         }
     }
     msg += `\n\nGrand Total: Rs. ${grandTotal.toFixed(0)}`;
 
-    // WhatsApp API URL for sending text
     let whatsappTextUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
-    
-    // Open WhatsApp Web with prefilled message
     window.open(whatsappTextUrl, '_blank');
 }
 
-        function generatePDF() {
-            let table = document.getElementById('productTable');
-            let tr = table.getElementsByTagName('tr');
+// Function to generate PDF
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    let doc = new jsPDF();
 
-            // Initialize jsPDF
-            const { jsPDF } = window.jspdf;
-            let doc = new jsPDF();
+    let shopName = document.getElementById('shop-name').value;
+    let paymentMode = document.getElementById('payment-mode').value;
+    let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
+    let previousBalance = document.getElementById('previousBalanceDisplay').textContent;
+    let currentDate = new Date().toLocaleDateString();
 
-            // Get selected shop name, payment mode, credit type, and previous balance
-            let shopName = document.getElementById('shop-name').value;
-            let paymentMode = document.getElementById('payment-mode').value;
-            let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
-            let previousBalance = document.getElementById('previousBalanceDisplay').textContent;
-            let currentDate = new Date().toLocaleDateString();
+    let fileName = `${currentDate} - ${shopName}.pdf`;
 
-            // Set the PDF title
-            let fileName = `${currentDate} - ${shopName}.pdf`;
+    doc.setFontSize(12);
+    doc.text(`Order Details`, 10, 10);
+    doc.text(`${currentDate} - ${shopName}`, 10, 20);
+    doc.text(`${paymentMode} - ${creditType}`, 10, 30);
+    doc.text(`${previousBalance}`, 10, 40);
 
-            // Add header text
-            doc.setFontSize(12);
-            doc.text(`Order Details`, 10, 10);
-            doc.text(`${currentDate} - ${shopName}`, 10, 20);
-            doc.text(`${paymentMode} - ${creditType}`, 10, 30);
-            doc.text(`${previousBalance}`, 10, 40);
+    let tableData = [];
+    let grandTotal = 0;
+    let table = document.getElementById('productTable');
+    let tr = table.getElementsByTagName('tr');
 
-            // Prepare the table data
-            let tableData = [];
-            let grandTotal = 0;
+    for (let i = 1; i < tr.length; i++) {
+        let orderQtyInput = tr[i].getElementsByTagName('input')[0];
+        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
+        let retailPrice = parseFloat(tr[i].cells[3].textContent) || 0;
+        let offerPrice = updatedProducts[i - 1].OfferPrice || 0; // Use updated offer price
+        let totalAmount = orderQty * offerPrice;
+        grandTotal += totalAmount;
 
-            for (let i = 1; i < tr.length; i++) {
-                let orderQtyInput = tr[i].getElementsByTagName('input')[0];
-                let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
-                let retailPrice = parseFloat(tr[i].cells[2].textContent) || 0;
-                let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0;
-                let totalAmount = orderQty * offerPrice;
-                grandTotal += totalAmount;
-
-                if (orderQty > 0) {
-                    tableData.push([
-                        tr[i].cells[0].innerHTML,          // Product ID
-                        tr[i].cells[1].innerHTML,          // Product Name
-                        orderQty,                          // Order Quantity
-                        retailPrice.toFixed(2),            // Retail Price
-                        offerPrice.toFixed(2),             // Offer Price
-                        totalAmount.toFixed(2)             // Total Amount
-                    ]);
-                }
-            }
-
-            // Add the table to the PDF
-            doc.autoTable({
-                startY: 50,
-                head: [['Product ID', 'Product Name', 'Order Quantity', 'Retail Price', 'Offer Price', 'Total Amount']],
-                body: tableData
-            });
-
-            // Add grand total
-            doc.text(`Grand Total: Rs.${grandTotal.toFixed(0)}`, 10, doc.lastAutoTable.finalY + 10);
-
-            // Save the PDF file
-            doc.save(fileName);
+        if (orderQty > 0) {
+            tableData.push([
+                tr[i].cells[0].innerHTML,      // Product ID
+                tr[i].cells[1].innerHTML,      // Product Name
+                orderQty,                      // Order Quantity
+                retailPrice.toFixed(2),        // Retail Price
+                offerPrice.toFixed(2),         // Offer Price
+                totalAmount.toFixed(2)         // Total Amount
+            ]);
         }
+    }
+
+    doc.autoTable({
+        startY: 50,
+        head: [['Product ID', 'Product Name', 'Order Quantity', 'Retail Price', 'Offer Price', 'Total Amount']],
+        body: tableData
+    });
+
+    doc.text(`Grand Total: Rs.${grandTotal.toFixed(0)}`, 10, doc.previousAutoTable.finalY + 10);
+    doc.save(fileName);
+}
     </script>
 
     <!-- Include jsPDF and jsPDF-AutoTable Libraries -->
