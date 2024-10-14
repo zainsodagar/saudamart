@@ -24,29 +24,49 @@
         .button-group {
             margin-top: 20px;
         }
+        .qty-badge {
+            background-color: #007bff;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Product Table</h1>
-    <p>List Number: 1</p>
+    <center><h1>Sauda Mart</h1></center>
     <p>Current Date: <span id="current-date"></span></p>
     
     <div class="container">
         <!-- Select Shop -->
-        <div class="shop-section">
-          <label for="shop-name">Select Shop:</label>
-          <select id="shop-name" onchange="updatePreviousBalance()">
-            <option value="MEHRAN BAKERY NO.2">MEHRAN BAKERY NO.2</option>
-            <option value="AHMED MINI MART NO.2">AHMED MINI MART NO.2</option>
-            <option value="FAMY CLIFTON">FAMY CLIFTON</option>
-            <option value="FAZLE RABBI">FAZLE RABBI</option>
-            <option value="SINDH PARADISE">SINDH PARADISE</option>
-            <option value="AL-REHMAN BILAWAL HOUSE">AL-REHMAN BILAWAL HOUSE</option>
-            <option value="DANISH DISCOUNT">DANISH DISCOUNT</option>
-            <option value="ANUSHA GULSHAN">ANUSHA GULSHAN</option>
-          </select>
-        </div>
+        <!-- Shop Section with Add Shop Button -->
+<div class="shop-section">
+    <label for="shop-name">Select Shop:</label>
+    <select id="shop-name" onchange="updatePreviousBalance()">
+        <option value="MEHRAN BAKERY NO.2">MEHRAN BAKERY NO.2</option>
+        <option value="AHMED MINI MART NO.2">AHMED MINI MART NO.2</option>
+        <option value="FAMY CLIFTON">FAMY CLIFTON</option>
+        <option value="FAZL-E-RABBI">FAZL-E-RABBI</option>
+        <option value="SINDH PARADISE">SINDH PARADISE</option>
+        <option value="AL-REHMAN BILAWAL HOUSE">AL-REHMAN BILAWAL HOUSE</option>
+        <option value="DANISH DISCOUNT">DANISH DISCOUNT</option>
+        <option value="ANUSHA GULSHAN">ANUSHA GULSHAN</option>
+    </select>
+    <!-- <button onclick="openAddShopModal()">Add Shop</button> -->
+</div>
+
+<!-- Add Shop Modal
+<div id="addShopModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddShopModal()">&times;</span>
+        <h2>Add New Shop</h2>
+        <label for="new-shop-name">Shop Name:</label>
+        <input type="text" id="new-shop-name" placeholder="Enter shop name" required>
+        <button onclick="addNewShop()">Add Shop</button>
+    </div>
+</div> -->
     
         <!-- Payment Mode -->
         <div class="payment-section">
@@ -67,7 +87,11 @@
           <p id="previousBalanceDisplay"></p>
         </div>
         
-        <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products..">
+        <div class="search-section">
+            <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products.." />
+            <input type="number" id="qtyInput" class="qty-input" placeholder="Enter Qty" min="1" />
+            <button id="addQtyBtn" onclick="applyQuantity()">Add</button>
+        </div>
         
         <button id="loadDataBtn">Load Product Data</button>
 
@@ -76,7 +100,6 @@
                 <tr>
                     <th>Product ID</th>
                     <th>Product Name</th>
-                    <th>Order Quantity</th>
                     <th>Retail Price</th>
                     <th>Offer Price</th>                    
                 </tr>
@@ -97,6 +120,17 @@
     </div>  
 
     <script>
+        function updateQuantity(rowIndex, qty) {
+    // Update the displayed badge
+    let productRow = document.getElementById('productRow-' + rowIndex);
+    let qtyBadge = productRow.querySelector('.badge'); // Assuming the badge class is used
+    qtyBadge.textContent = qty; // Display quantity in the badge
+
+    // Store the quantity in the data-qty attribute for future use (not affecting product name)
+    productRow.setAttribute('data-qty', qty);
+}
+
+
         document.getElementById('current-date').textContent = new Date().toLocaleDateString();
 
         function handlePaymentChange() {
@@ -106,20 +140,15 @@
         }
 
         function updatePreviousBalance() {
-            const shopName = document.getElementById('shop-name').value;
-            console.log(`Selected shop: ${shopName}`); // Debugging line
-            
-            // Replace with your actual JSON data URL
-            fetch('BALANCE.json')
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Fetched data:', data); // Debugging line
-                    const previousBalance = data[shopName]?.previousBalance;
-                    console.log(`Previous balance for ${shopName}: Rs.${previousBalance}`); // Debugging line
-                    document.getElementById('previousBalanceDisplay').innerHTML = `Previous Balance: Rs.${previousBalance !== undefined ? previousBalance : 0}`;
-                })
-                .catch(error => console.error('Error loading balance data:', error));
-        }
+    const shopName = document.getElementById('shop-name').value.trim(); // trim extra spaces
+    fetch('BALANCE.json')
+        .then(response => response.json())
+        .then(data => {
+            const previousBalance = data[shopName]?.previousBalance;
+            document.getElementById('previousBalanceDisplay').innerHTML = `Previous Balance: Rs.${previousBalance !== undefined ? previousBalance : 0}`;
+        })
+        .catch(error => console.error('Error loading balance data:', error));
+}
 
         // Load the balance data from JSON
         function loadBalanceData() {
@@ -150,6 +179,7 @@
 
         // In-memory data structure to store updated product data
         let updatedProducts = [];
+        let selectedRowIndex = null; // Global variable to store the selected row index
 
 // Replace ondblclick with click event in the row creation logic:
 document.getElementById('loadDataBtn').addEventListener('click', function() {
@@ -165,15 +195,51 @@ document.getElementById('loadDataBtn').addEventListener('click', function() {
                 row.innerHTML = `
                     <td>${product.ProductID}</td>
                     <td>${product.ProductName}</td>
-                    <td><input type="number" value="${product.orderQty || 0}" min="0" /></td>
                     <td>${product.RetailPrice}</td>
                     <td onclick="makeEditable(this, ${index})">${product.OfferPrice}</td>
                 `;
+
+                // Click event for row selection
+                row.addEventListener('click', function() {
+                    // Highlight the selected row
+                    const rows = document.querySelectorAll('#productTable tbody tr');
+                    rows.forEach(row => row.classList.remove('selected')); // Remove previous selection
+                    row.classList.add('selected');
+                    selectedRowIndex = index; // Store the selected row index
+                });
+
                 tableBody.appendChild(row);
             });
         })
         .catch(error => console.error('Error loading data:', error));
 });
+
+function applyQuantity() {
+    const qtyInput = document.getElementById('qtyInput');
+    const qtyValue = parseInt(qtyInput.value);
+
+    if (selectedRowIndex === null) {
+        alert('Please select a product row first.');
+        return;
+    }
+
+    if (isNaN(qtyValue) || qtyValue < 1) {
+        alert('Please enter a valid quantity.');
+        return;
+    }
+
+    // Find the selected row and apply quantity as a badge or tooltip
+    const tableBody = document.querySelector('#productTable tbody');
+    const selectedRow = tableBody.rows[selectedRowIndex];
+
+    // Apply quantity as a tooltip or badge (display next to product name)
+    const productCell = selectedRow.cells[1]; // Product name cell
+    productCell.setAttribute('data-qty', qtyValue); // Set as a data attribute
+    productCell.innerHTML = `${selectedRow.cells[1].textContent} <span class="qty-badge">(${qtyValue})</span>`; // Update the innerHTML
+
+    // Clear the input after applying
+    qtyInput.value = '';
+}
 
 function makeEditable(td, index) {
     td.setAttribute('contenteditable', 'true');
@@ -199,7 +265,7 @@ function makeEditable(td, index) {
 }
 
       // Function to handle preview
-function previewTable() {
+      function previewTable() {
     let table = document.getElementById('productTable');
     let tr = table.getElementsByTagName('tr');
     let previewWindow = window.open('', '', 'width=800,height=600');
@@ -210,72 +276,85 @@ function previewTable() {
     let previousBalance = document.getElementById('previousBalanceDisplay').textContent;
     let currentDate = new Date().toLocaleDateString();
 
-    previewWindow.document.write(`<h2>${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - ${previousBalance}</h2>`);
-    previewWindow.document.write('<table border="1">');
-    previewWindow.document.write('<tr><th>Product ID</th><th>Product Name</th><th>Order Quantity</th><th>Retail Price</th><th>Offer Price</th><th>Total Amount</th></tr>');
+    previewWindow.document.write(`<h2>${currentDate} - ${shopName} - ${paymentMode} - ${creditType} - Previous Balance: Rs.${previousBalance}</h2>`);
+    previewWindow.document.write('<table border="1" cellpadding="5" cellspacing="0">');
+    previewWindow.document.write('<tr><th>Product ID</th><th>Product Name</th><th>Quantity</th><th>Retail Price</th><th>Offer Price</th><th>Total Amount</th></tr>');
 
     let grandTotal = 0;
 
     for (let i = 1; i < tr.length; i++) {
-        let orderQtyInput = tr[i].getElementsByTagName('input')[0];
-        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
-        let retailPrice = parseFloat(tr[i].cells[3].textContent) || 0;
-        let offerPrice = updatedProducts[i - 1].OfferPrice || 0; // Use updated offer price
-        let totalAmount = orderQty * offerPrice;
+        let productRow = tr[i];
+        let qtyValue = parseInt(productRow.cells[1].getAttribute('data-qty')) || 0; // Get quantity from data-qty
 
-        grandTotal += totalAmount;
+        if (qtyValue > 0) {
+            let productId = productRow.cells[0].textContent;
+            // Extract just the product name, excluding the badge
+            let productName = productRow.cells[1].childNodes[0].textContent.trim();  // First text node (Product Name)
+            let retailPrice = parseFloat(productRow.cells[2].textContent) || 0;
+            let offerPrice = parseFloat(productRow.cells[3].textContent) || 0;
+            let totalAmount = qtyValue * offerPrice;
+            grandTotal += totalAmount;
 
-        if (orderQty > 0) {
-            previewWindow.document.write('<tr>');
-            previewWindow.document.write('<td>' + tr[i].cells[0].innerHTML + '</td>');
-            previewWindow.document.write('<td>' + tr[i].cells[1].innerHTML + '</td>');
-            previewWindow.document.write('<td>' + orderQty + '</td>');
-            previewWindow.document.write('<td>' + retailPrice.toFixed(2) + '</td>');
-            previewWindow.document.write('<td>' + offerPrice.toFixed(2) + '</td>');
-            previewWindow.document.write('<td>' + totalAmount.toFixed(2) + '</td>');
-            previewWindow.document.write('</tr>');
+            previewWindow.document.write(`<tr>
+                <td>${productId}</td>
+                <td>${productName}</td>
+                <td>${qtyValue}</td>
+                <td>Rs. ${retailPrice.toFixed(2)}</td>
+                <td>Rs. ${offerPrice.toFixed(2)}</td>
+                <td>Rs. ${totalAmount.toFixed(2)}</td>
+            </tr>`);
         }
     }
 
-    previewWindow.document.write('<tr><td colspan="5"><strong>Grand Total</strong></td><td>Rs.' + grandTotal.toFixed(0) + '</td></tr>');
+    previewWindow.document.write(`<tr><td colspan="5" style="text-align: right;">Grand Total</td><td>Rs. ${grandTotal.toFixed(2)}</td></tr>`);
     previewWindow.document.write('</table>');
     previewWindow.document.close();
 }
 
+
+
+
+
 // Function to handle WhatsApp message
 function sendWhatsApp() {
-    let table = document.getElementById('productTable');
-    let tr = table.getElementsByTagName('tr');
-    let msg = 'Product Order Details\n';
-
     let shopName = document.getElementById('shop-name').value;
     let paymentMode = document.getElementById('payment-mode').value;
     let creditType = paymentMode === 'credit' ? document.getElementById('credit-type').value : 'N/A';
     let previousBalance = document.getElementById('previousBalanceDisplay').textContent;
-    let currentDate = new Date().toLocaleDateString();
+    let table = document.getElementById('productTable');
+    let tr = table.getElementsByTagName('tr');
 
-    msg += `${currentDate} - ${shopName}\n`;
-    msg += `${paymentMode} - ${creditType}\n`; 
-    msg += `${previousBalance}\n\nOrder Details:`;
+    let message = `Order Details\nShop: ${shopName}\nPayment: ${paymentMode} - ${creditType}\nPrevious Balance: ${previousBalance}\n\nProducts:\n`;
+
+    for (let i = 1; i < tr.length; i++) {
+        let productRow = tr[i];
+        let orderQty = parseInt(productRow.cells[1].getAttribute('data-qty')) || 0;
+
+        if (orderQty > 0) {
+            // Extract just the product name, excluding the badge
+            let productName = productRow.cells[1].childNodes[0].textContent.trim();  // First text node (Product Name)
+            let offerPrice = parseFloat(productRow.cells[3].textContent) || 0;
+            let totalAmount = orderQty * offerPrice;
+
+            message += `${productName} - Qty: ${orderQty}, Total: Rs.${totalAmount.toFixed(2)}\n`;
+        }
+    }
 
     let grandTotal = 0;
     for (let i = 1; i < tr.length; i++) {
-        let orderQtyInput = tr[i].getElementsByTagName('input')[0];
-        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
-        let retailPrice = parseFloat(tr[i].cells[3].textContent) || 0;
-        let offerPrice = updatedProducts[i - 1].OfferPrice || 0; // Use updated offer price
-        let totalAmount = orderQty * offerPrice;
-        grandTotal += totalAmount;
-
-        if (orderQty > 0) {
-            msg += `\n${orderQty} x ${tr[i].cells[1].innerHTML} @ Rs.${offerPrice.toFixed(2)} = Rs.${totalAmount.toFixed(2)}`;
-        }
+        let orderQty = parseInt(tr[i].cells[1].getAttribute('data-qty')) || 0;
+        let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0;
+        grandTotal += orderQty * offerPrice;
     }
-    msg += `\n\nGrand Total: Rs. ${grandTotal.toFixed(0)}`;
 
-    let whatsappTextUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
-    window.open(whatsappTextUrl, '_blank');
+    message += `\nGrand Total: Rs.${grandTotal.toFixed(0)}`;
+
+    let whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 }
+
+
+
 
 // Function to generate PDF
 function generatePDF() {
@@ -291,10 +370,11 @@ function generatePDF() {
     let fileName = `${currentDate} - ${shopName}.pdf`;
 
     doc.setFontSize(12);
-    doc.text(`Order Details`, 10, 10);
-    doc.text(`${currentDate} - ${shopName}`, 10, 20);
-    doc.text(`${paymentMode} - ${creditType}`, 10, 30);
-    doc.text(`${previousBalance}`, 10, 40);
+    doc.text(`Sauda Mart`, 90, 10);
+    doc.text(`Date: ${currentDate}`, 10, 20);
+    doc.text(`Shop: ${shopName}`, 10, 30);
+    doc.text(`Payment mode and type: ${paymentMode} and ${creditType}`, 10, 40);
+    doc.text(`Previous Balance: ${previousBalance}`, 10, 50);
 
     let tableData = [];
     let grandTotal = 0;
@@ -302,34 +382,48 @@ function generatePDF() {
     let tr = table.getElementsByTagName('tr');
 
     for (let i = 1; i < tr.length; i++) {
-        let orderQtyInput = tr[i].getElementsByTagName('input')[0];
-        let orderQty = orderQtyInput ? parseInt(orderQtyInput.value) : 0;
-        let retailPrice = parseFloat(tr[i].cells[3].textContent) || 0;
-        let offerPrice = updatedProducts[i - 1].OfferPrice || 0; // Use updated offer price
+        let productRow = tr[i];
+        let orderQty = parseInt(productRow.cells[1].getAttribute('data-qty')) || 0;
+        let retailPrice = parseFloat(tr[i].cells[2].textContent) || 0;
+        let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0;
         let totalAmount = orderQty * offerPrice;
         grandTotal += totalAmount;
 
         if (orderQty > 0) {
+            let productName = productRow.cells[1].childNodes[0].textContent.trim();  // First text node (Product Name)
+
             tableData.push([
-                tr[i].cells[0].innerHTML,      // Product ID
-                tr[i].cells[1].innerHTML,      // Product Name
-                orderQty,                      // Order Quantity
-                retailPrice.toFixed(2),        // Retail Price
-                offerPrice.toFixed(2),         // Offer Price
-                totalAmount.toFixed(2)         // Total Amount
+                tr[i].cells[0].textContent,      // Product ID
+                productName,                     // Product Name
+                orderQty,                        // Order Quantity
+                retailPrice.toFixed(2),          // Retail Price
+                offerPrice.toFixed(2),           // Offer Price
+                totalAmount.toFixed(2)           // Total Amount
             ]);
         }
     }
 
     doc.autoTable({
-        startY: 50,
+        startY: 60,
         head: [['Product ID', 'Product Name', 'Order Quantity', 'Retail Price', 'Offer Price', 'Total Amount']],
-        body: tableData
+        body: tableData,
+        columnStyles: {
+            2: { halign: 'right' },  // Order Quantity column
+            3: { halign: 'right' },  // Retail Price column
+            4: { halign: 'right' },  // Offer Price column
+            5: { halign: 'right' }   // Total Amount column
+        }
     });
 
-    doc.text(`Grand Total: Rs.${grandTotal.toFixed(0)}`, 10, doc.previousAutoTable.finalY + 10);
+    doc.text(`Grand Total: Rs.${grandTotal.toFixed(0)}`, 152.5, doc.previousAutoTable.finalY + 10);
     doc.save(fileName);
 }
+
+
+
+
+
+
     </script>
 
     <!-- Include jsPDF and jsPDF-AutoTable Libraries -->
