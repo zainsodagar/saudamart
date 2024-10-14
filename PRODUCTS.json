@@ -1776,5 +1776,19 @@
         "RetailPrice": null,
         "OfferPrice": 580,
         "Order": 0
+    },
+    {
+        "ProductID": 255,
+        "ProductName": "SURF EXCEL 1O WALA",
+        "RetailPrice": 120,
+        "OfferPrice": 114,
+        "Order": 0
+    },
+    {
+        "ProductID": 256,
+        "ProductName": "SURF EXCEL 5O WALA",
+        "RetailPrice": 50,
+        "OfferPrice": 47.5,
+        "Order": 0
     }
 ]
