@@ -2,28 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Table</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        /* Your existing CSS styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
-        .company-name {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        .search-bar {
-            margin-bottom: 10px;
-        }
-        .button-group {
-            margin-top: 20px;
-        }
+        /* Custom styles for badges */
         .qty-badge {
             background-color: #007bff;
             color: white;
@@ -32,105 +18,121 @@
             font-size: 0.8em;
             margin-left: 5px;
         }
+        h1 {
+            font-size: 2rem;
+        }
+        .btn-custom {
+            margin-right: 10px;
+        }
+        /* Responsive table adjustments */
+        .table-responsive {
+            overflow-x: auto;
+        }
+        /* Flexbox for mobile inputs */
+        @media (max-width: 576px) {
+            .input-group-mobile {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <center><h1>Sauda Mart</h1></center>
-    <p>Current Date: <span id="current-date"></span></p>
-    
-    <div class="container">
-        <!-- Select Shop -->
+    <div class="container mt-4">
+        <div class="text-center">
+            <h1>Sauda Mart</h1>
+            <p>Current Date: <span id="current-date"></span></p>
+        </div>
+
         <!-- Shop Section with Add Shop Button -->
-<div class="shop-section">
-    <label for="shop-name">Select Shop:</label>
-    <select id="shop-name" onchange="updatePreviousBalance()">
-        <option value="MEHRAN BAKERY NO.2">MEHRAN BAKERY NO.2</option>
-        <option value="AHMED MINI MART NO.2">AHMED MINI MART NO.2</option>
-        <option value="FAMY CLIFTON">FAMY CLIFTON</option>
-        <option value="FAZL-E-RABBI">FAZL-E-RABBI</option>
-        <option value="SINDH PARADISE">SINDH PARADISE</option>
-        <option value="AL-REHMAN BILAWAL HOUSE">AL-REHMAN BILAWAL HOUSE</option>
-        <option value="DANISH DISCOUNT">DANISH DISCOUNT</option>
-        <option value="ANUSHA GULSHAN">ANUSHA GULSHAN</option>
-    </select>
-    <!-- <button onclick="openAddShopModal()">Add Shop</button> -->
-</div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="shop-name" class="form-label">Select Shop:</label>
+                <select class="form-select" id="shop-name" onchange="updatePreviousBalance()">
+                    <option value="MEHRAN BAKERY NO.2">MEHRAN BAKERY NO.2</option>
+                    <option value="AHMED MINI MART NO.2">AHMED MINI MART NO.2</option>
+                    <option value="FAMY CLIFTON">FAMY CLIFTON</option>
+                    <option value="FAZL-E-RABBI">FAZL-E-RABBI</option>
+                    <option value="SINDH PARADISE">SINDH PARADISE</option>
+                    <option value="AL-REHMAN BILAWAL HOUSE">AL-REHMAN BILAWAL HOUSE</option>
+                    <option value="DANISH DISCOUNT">DANISH DISCOUNT</option>
+                    <option value="ANUSHA GULSHAN">ANUSHA GULSHAN</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="payment-mode" class="form-label">Payment Mode:</label>
+                <select class="form-select" id="payment-mode" onchange="handlePaymentChange()">
+                    <option value="cash">Cash</option>
+                    <option value="credit">Credit</option>
+                </select>
+            </div>
+        </div>
 
-<!-- Add Shop Modal
-<div id="addShopModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeAddShopModal()">&times;</span>
-        <h2>Add New Shop</h2>
-        <label for="new-shop-name">Shop Name:</label>
-        <input type="text" id="new-shop-name" placeholder="Enter shop name" required>
-        <button onclick="addNewShop()">Add Shop</button>
+        <!-- Credit Options (Hidden by Default) -->
+        <div id="credit-options" class="row mb-3" style="display: none;">
+            <div class="col-md-6">
+                <label for="credit-type" class="form-label">Select Credit Type:</label>
+                <select class="form-select" id="credit-type">
+                    <option value="bill-sign">Bill Sign</option>
+                    <option value="cheque">Cheque</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <p id="previousBalanceDisplay" class="mt-4"></p>
+            </div>
+        </div>
+
+        <!-- Search and Add Quantity Section -->
+        <div class="row mb-3 d-flex align-items-center input-group-mobile">
+            <div class="col-md-8 col-sm-12 mb-2 mb-md-0">
+                <input type="text" id="searchBar" class="form-control" onkeyup="searchTable()" placeholder="Search for products...">
+            </div>
+            <div class="col-md-4 col-sm-12 d-flex align-items-center">
+                <input type="number" id="qtyInput" class="form-control me-2" placeholder="Enter Qty" min="1">
+                <button id="addQtyBtn" class="btn btn-primary" onclick="applyQuantity()">Add</button>
+            </div>
+        </div>
+
+        <div class="mb-3 text-end">
+            <button id="loadDataBtn" class="btn btn-secondary">Load Product Data</button>
+        </div>
+
+        <!-- Responsive Product Table -->
+        <div class="table-responsive">
+            <table id="productTable" class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Retail Price</th>
+                        <th>Offer Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- User Info -->
+        <div class="mb-3">
+            <label for="userName" class="form-label">Enter Your Name:</label>
+            <input type="text" id="userName" class="form-control" required>
+        </div>
+
+        <!-- Button Group -->
+        <div class="button-group text-end">
+            <button class="btn btn-info btn-custom" onclick="previewTable()">Preview</button>
+            <button class="btn btn-success btn-custom" onclick="sendWhatsApp()">Send WhatsApp</button>
+            <button class="btn btn-danger" onclick="generatePDF()">Generate PDF</button>
+        </div>
     </div>
-</div> -->
-    
-        <!-- Payment Mode -->
-        <div class="payment-section">
-          <label for="payment-mode">Payment Mode:</label>
-          <select id="payment-mode" onchange="handlePaymentChange()">
-            <option value="cash">Cash</option>
-            <option value="credit">Credit</option>
-          </select>
-        </div>
-    
-        <!-- Credit Options -->
-        <div id="credit-options" style="display: none;">
-          <label for="credit-type">Select Credit Type:</label>
-          <select id="credit-type">
-            <option value="bill-sign">Bill Sign</option>
-            <option value="cheque">Cheque</option>
-          </select>
-          <p id="previousBalanceDisplay"></p>
-        </div>
-        
-        <div class="search-section">
-            <input type="text" id="searchBar" class="search-bar" onkeyup="searchTable()" placeholder="Search for products.." />
-            <input type="number" id="qtyInput" class="qty-input" placeholder="Enter Qty" min="1" />
-            <button id="addQtyBtn" onclick="applyQuantity()">Add</button>
-        </div>
-        
-        <button id="loadDataBtn">Load Product Data</button>
 
-        <table id="productTable">
-            <thead>
-                <tr>
-                    <th>Product ID</th>
-                    <th>Product Name</th>
-                    <th>Retail Price</th>
-                    <th>Offer Price</th>                    
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data will be inserted here -->
-            </tbody>
-        </table>
-
-        <label for="userName">Enter Your Name: </label>
-        <input type="text" id="userName" name="userName" required>
-
-        <div class="button-group">
-            <button onclick="previewTable()">Preview</button>
-            <button onclick="sendWhatsApp()">Send WhatsApp</button>
-            <button onclick="generatePDF()">Generate PDF</button>
-        </div>
-    </div>  
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
     <script>
-        function updateQuantity(rowIndex, qty) {
-    // Update the displayed badge
-    let productRow = document.getElementById('productRow-' + rowIndex);
-    let qtyBadge = productRow.querySelector('.badge'); // Assuming the badge class is used
-    qtyBadge.textContent = qty; // Display quantity in the badge
-
-    // Store the quantity in the data-qty attribute for future use (not affecting product name)
-    productRow.setAttribute('data-qty', qty);
-}
-
-
         document.getElementById('current-date').textContent = new Date().toLocaleDateString();
 
         function handlePaymentChange() {
@@ -140,27 +142,19 @@
         }
 
         function updatePreviousBalance() {
-    const shopName = document.getElementById('shop-name').value.trim(); // trim extra spaces
-    fetch('BALANCE.json')
-        .then(response => response.json())
-        .then(data => {
-            const previousBalance = data[shopName]?.previousBalance;
-            document.getElementById('previousBalanceDisplay').innerHTML = `Previous Balance: Rs.${previousBalance !== undefined ? previousBalance : 0}`;
-        })
-        .catch(error => console.error('Error loading balance data:', error));
-}
-
-        // Load the balance data from JSON
-        function loadBalanceData() {
-            // Function content if needed
+            const shopName = document.getElementById('shop-name').value.trim();
+            fetch('BALANCE.json')
+                .then(response => response.json())
+                .then(data => {
+                    const previousBalance = data[shopName]?.previousBalance;
+                    document.getElementById('previousBalanceDisplay').innerHTML = `Previous Balance: Rs.${previousBalance !== undefined ? previousBalance : 0}`;
+                })
+                .catch(error => console.error('Error loading balance data:', error));
         }
 
-        // Set event listener on shop selection
         document.getElementById('shop-name').addEventListener('change', updatePreviousBalance);
-
-        // Initial load of the balance data when the page loads
         window.onload = function() {
-            updatePreviousBalance(); // Ensure previous balance is updated on load
+            updatePreviousBalance();
         };
 
         function searchTable() {
@@ -169,7 +163,7 @@
             let tr = table.getElementsByTagName('tr');
 
             for (let i = 1; i < tr.length; i++) {
-                let td = tr[i].getElementsByTagName('td')[1]; // Search by Product Name
+                let td = tr[i].getElementsByTagName('td')[1];
                 if (td) {
                     let txtValue = td.textContent || td.innerText;
                     tr[i].style.display = txtValue.toUpperCase().indexOf(input) > -1 ? '' : 'none';
@@ -177,44 +171,40 @@
             }
         }
 
-        // In-memory data structure to store updated product data
         let updatedProducts = [];
-        let selectedRowIndex = null; // Global variable to store the selected row index
+        let selectedRowIndex = null;
 
-// Replace ondblclick with click event in the row creation logic:
-document.getElementById('loadDataBtn').addEventListener('click', function() {
-    fetch('PRODUCTS.json')
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.querySelector('#productTable tbody');
-            tableBody.innerHTML = ''; // Clear existing rows
-            updatedProducts = data; // Store original product data in memory for tracking changes
+        document.getElementById('loadDataBtn').addEventListener('click', function() {
+            fetch('PRODUCTS.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#productTable tbody');
+                    tableBody.innerHTML = '';
+                    updatedProducts = data;
 
-            data.forEach((product, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${product.ProductID}</td>
-                    <td>${product.ProductName}</td>
-                    <td>${product.RetailPrice}</td>
-                    <td onclick="makeEditable(this, ${index})">${product.OfferPrice}</td>
-                `;
+                    data.forEach((product, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.ProductID}</td>
+                            <td>${product.ProductName}</td>
+                            <td>${product.RetailPrice}</td>
+                            <td contenteditable="true" onblur="updateOfferPrice(this, ${index})">${product.OfferPrice}</td>
+                        `;
 
-                // Click event for row selection
-                row.addEventListener('click', function() {
-                    // Highlight the selected row
-                    const rows = document.querySelectorAll('#productTable tbody tr');
-                    rows.forEach(row => row.classList.remove('selected')); // Remove previous selection
-                    row.classList.add('selected');
-                    selectedRowIndex = index; // Store the selected row index
-                });
+                        row.addEventListener('click', function() {
+                            const rows = document.querySelectorAll('#productTable tbody tr');
+                            rows.forEach(row => row.classList.remove('table-active'));
+                            row.classList.add('table-active');
+                            selectedRowIndex = index;
+                        });
 
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error loading data:', error));
-});
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error loading data:', error));
+        });
 
-function applyQuantity() {
+        function applyQuantity() {
     const qtyInput = document.getElementById('qtyInput');
     const qtyValue = parseInt(qtyInput.value);
 
@@ -223,49 +213,39 @@ function applyQuantity() {
         return;
     }
 
-    if (isNaN(qtyValue) || qtyValue < 1) {
+    if (isNaN(qtyValue) || qtyValue <= 0) {
         alert('Please enter a valid quantity.');
         return;
     }
 
-    // Find the selected row and apply quantity as a badge or tooltip
-    const tableBody = document.querySelector('#productTable tbody');
-    const selectedRow = tableBody.rows[selectedRowIndex];
+    const row = document.querySelector(`#productTable tbody tr:nth-child(${selectedRowIndex + 1})`);
+    
+    // Store quantity in data attribute
+    let currentQty = parseInt(row.getAttribute('data-qty')) || 0;
+    let newQty = currentQty + qtyValue;
+    row.setAttribute('data-qty', newQty);
 
-    // Apply quantity as a tooltip or badge (display next to product name)
-    const productCell = selectedRow.cells[1]; // Product name cell
-    productCell.setAttribute('data-qty', qtyValue); // Set as a data attribute
-    productCell.innerHTML = `${selectedRow.cells[1].textContent} <span class="qty-badge">(${qtyValue})</span>`; // Update the innerHTML
+    // Update the product name with a badge
+    const productNameCell = row.cells[1];
+    let qtyBadge = productNameCell.querySelector('.qty-badge');
+    if (qtyBadge) {
+        qtyBadge.textContent = newQty;
+    } else {
+        qtyBadge = document.createElement('span');
+        qtyBadge.className = 'qty-badge';
+        qtyBadge.textContent = newQty;
+        productNameCell.appendChild(qtyBadge);
+    }
 
-    // Clear the input after applying
     qtyInput.value = '';
 }
 
-function makeEditable(td, index) {
-    td.setAttribute('contenteditable', 'true');
-    td.focus();
-
-    // If clicked outside the cell, save and remove editable mode
-    td.addEventListener('blur', function() {
-        td.removeAttribute('contenteditable');
-        const newPrice = parseFloat(td.textContent);
-        
-        // Update the offer price in the in-memory product data
-        if (!isNaN(newPrice)) {
-            updatedProducts[index].OfferPrice = newPrice;
+        function updateOfferPrice(cell, index) {
+            updatedProducts[index].OfferPrice = cell.innerText;
         }
-    });
 
-    // Allow pressing 'Enter' to save changes and remove editable mode
-    td.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            td.blur();  // Simulate blur event to save the value
-        }
-    });
-}
-
-      // Function to handle preview
-      function previewTable() {
+       // Function to handle preview
+       function previewTable() {
     let table = document.getElementById('productTable');
     let tr = table.getElementsByTagName('tr');
     let previewWindow = window.open('', '', 'width=800,height=600');
@@ -283,15 +263,14 @@ function makeEditable(td, index) {
     let grandTotal = 0;
 
     for (let i = 1; i < tr.length; i++) {
-        let productRow = tr[i];
-        let qtyValue = parseInt(productRow.cells[1].getAttribute('data-qty')) || 0; // Get quantity from data-qty
+        let row = tr[i];
+        let qtyValue = parseInt(row.getAttribute('data-qty')) || 0;  // Fetch quantity from data attribute
 
         if (qtyValue > 0) {
-            let productId = productRow.cells[0].textContent;
-            // Extract just the product name, excluding the badge
-            let productName = productRow.cells[1].childNodes[0].textContent.trim();  // First text node (Product Name)
-            let retailPrice = parseFloat(productRow.cells[2].textContent) || 0;
-            let offerPrice = parseFloat(productRow.cells[3].textContent) || 0;
+            let productId = row.cells[0].textContent;
+            let productName = row.cells[1].childNodes[0].textContent.trim();  // Extract product name
+            let retailPrice = parseFloat(row.cells[2].textContent) || 0;
+            let offerPrice = parseFloat(row.cells[3].textContent) || 0;
             let totalAmount = qtyValue * offerPrice;
             grandTotal += totalAmount;
 
@@ -306,10 +285,11 @@ function makeEditable(td, index) {
         }
     }
 
-    previewWindow.document.write(`<tr><td colspan="5" style="text-align: right;">Grand Total</td><td>Rs. ${grandTotal.toFixed(2)}</td></tr>`);
+    previewWindow.document.write(`<tr><td colspan="5" style="text-align: right;">Grand Total</td><td>Rs. ${grandTotal.toFixed(0)}</td></tr>`);
     previewWindow.document.write('</table>');
     previewWindow.document.close();
 }
+
 
 
 
@@ -326,25 +306,20 @@ function sendWhatsApp() {
 
     let message = `Order Details\nShop: ${shopName}\nPayment: ${paymentMode} - ${creditType}\nPrevious Balance: ${previousBalance}\n\nProducts:\n`;
 
-    for (let i = 1; i < tr.length; i++) {
-        let productRow = tr[i];
-        let orderQty = parseInt(productRow.cells[1].getAttribute('data-qty')) || 0;
-
-        if (orderQty > 0) {
-            // Extract just the product name, excluding the badge
-            let productName = productRow.cells[1].childNodes[0].textContent.trim();  // First text node (Product Name)
-            let offerPrice = parseFloat(productRow.cells[3].textContent) || 0;
-            let totalAmount = orderQty * offerPrice;
-
-            message += `${productName} - Qty: ${orderQty}, Total: Rs.${totalAmount.toFixed(2)}\n`;
-        }
-    }
-
     let grandTotal = 0;
+
     for (let i = 1; i < tr.length; i++) {
-        let orderQty = parseInt(tr[i].cells[1].getAttribute('data-qty')) || 0;
-        let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0;
-        grandTotal += orderQty * offerPrice;
+        let row = tr[i];
+        let qtyValue = parseInt(row.getAttribute('data-qty')) || 0;
+
+        if (qtyValue > 0) {
+            let productName = row.cells[1].childNodes[0].textContent.trim();  // Extract product name
+            let offerPrice = parseFloat(row.cells[3].textContent) || 0;
+            let totalAmount = qtyValue * offerPrice;
+            grandTotal += totalAmount;
+
+            message += `${productName} - Qty: ${qtyValue}, Total: Rs.${totalAmount.toFixed(2)}\n`;
+        }
     }
 
     message += `\nGrand Total: Rs.${grandTotal.toFixed(0)}`;
@@ -352,6 +327,7 @@ function sendWhatsApp() {
     let whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
+
 
 
 
@@ -382,30 +358,30 @@ function generatePDF() {
     let tr = table.getElementsByTagName('tr');
 
     for (let i = 1; i < tr.length; i++) {
-        let productRow = tr[i];
-        let orderQty = parseInt(productRow.cells[1].getAttribute('data-qty')) || 0;
-        let retailPrice = parseFloat(tr[i].cells[2].textContent) || 0;
-        let offerPrice = parseFloat(tr[i].cells[3].textContent) || 0;
-        let totalAmount = orderQty * offerPrice;
-        grandTotal += totalAmount;
+        let row = tr[i];
+        let qtyValue = parseInt(row.getAttribute('data-qty')) || 0;
 
-        if (orderQty > 0) {
-            let productName = productRow.cells[1].childNodes[0].textContent.trim();  // First text node (Product Name)
+        if (qtyValue > 0) {
+            let productName = row.cells[1].childNodes[0].textContent.trim();
+            let retailPrice = parseFloat(row.cells[2].textContent) || 0;
+            let offerPrice = parseFloat(row.cells[3].textContent) || 0;
+            let totalAmount = qtyValue * offerPrice;
+            grandTotal += totalAmount;
 
             tableData.push([
-                tr[i].cells[0].textContent,      // Product ID
-                productName,                     // Product Name
-                orderQty,                        // Order Quantity
-                retailPrice.toFixed(2),          // Retail Price
-                offerPrice.toFixed(2),           // Offer Price
-                totalAmount.toFixed(2)           // Total Amount
+                row.cells[0].textContent,      // Product ID
+                productName,                   // Product Name
+                qtyValue,                      // Quantity
+                retailPrice.toFixed(2),         // Retail Price
+                offerPrice.toFixed(2),          // Offer Price
+                totalAmount.toFixed(2)          // Total Amount
             ]);
         }
     }
 
     doc.autoTable({
         startY: 60,
-        head: [['Product ID', 'Product Name', 'Order Quantity', 'Retail Price', 'Offer Price', 'Total Amount']],
+        head: [['Product ID', 'Product Name', 'Quantity', 'Retail Price', 'Offer Price', 'Total Amount']],
         body: tableData,
         columnStyles: {
             2: { halign: 'right' },  // Order Quantity column
@@ -413,25 +389,18 @@ function generatePDF() {
             4: { halign: 'right' },  // Offer Price column
             5: { halign: 'right' }   // Total Amount column
         }
+
     });
 
-    doc.text(`Grand Total: Rs.${grandTotal.toFixed(0)}`, 152.5, doc.previousAutoTable.finalY + 10);
+    doc.text(`Grand Total: Rs.${grandTotal.toFixed(0)}`, 152.5, doc.lastAutoTable.finalY + 10);
+
     doc.save(fileName);
 }
 
 
-
-
-
-
     </script>
-
-    <!-- Include jsPDF and jsPDF-AutoTable Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-
-    <!-- Include html2canvas if needed for other functions -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+    
 </body>
 </html>
