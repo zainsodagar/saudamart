@@ -1,1652 +1,1652 @@
 [
     {
-        "id": 1,
-        "name": "ACTIV BAR  (PAKISTANI) 75 GM",
-        "RP": null,
-        "Offer": 13
+        "ProductID": 1,
+        "ProductName": "ACTIV BAR  (PAKISTANI) 75 GM",
+        "RetailPrice": null,
+        "OfferPrice": 13
     },
     {
-        "id": 2,
-        "name": "SURF EXCEL 1O WALA",
-        "RP": 120,
-        "Offer": 114
+        "ProductID": 2,
+        "ProductName": "SURF EXCEL 1O WALA",
+        "RetailPrice": 120,
+        "OfferPrice": 114
     },
     {
-        "id": 3,
-        "name": "SURF EXCEL 5O WALA",
-        "RP": 50,
-        "Offer": 48
+        "ProductID": 3,
+        "ProductName": "SURF EXCEL 5O WALA",
+        "RetailPrice": 50,
+        "OfferPrice": 48
     },
     {
-        "id": 4,
-        "name": "SURF EXCEL  1  KG",
-        "RP": 549,
-        "Offer": 505
+        "ProductID": 4,
+        "ProductName": "SURF EXCEL  1  KG",
+        "RetailPrice": 549,
+        "OfferPrice": 505
     },
     {
-        "id": 5,
-        "name": "BONUS TRISTAR 1O WALA",
-        "RP": 120,
-        "Offer": 114
+        "ProductID": 5,
+        "ProductName": "BONUS TRISTAR 1O WALA",
+        "RetailPrice": 120,
+        "OfferPrice": 114
     },
     {
-        "id": 6,
-        "name": "BONUS TRISTAR 5O WALA",
-        "RP": 50,
-        "Offer": 48
+        "ProductID": 6,
+        "ProductName": "BONUS TRISTAR 5O WALA",
+        "RetailPrice": 50,
+        "OfferPrice": 48
     },
     {
-        "id": 7,
-        "name": "BONUS TRISTAR 99 WALA",
-        "RP": 99,
-        "Offer": 95
+        "ProductID": 7,
+        "ProductName": "BONUS TRISTAR 99 WALA",
+        "RetailPrice": 99,
+        "OfferPrice": 95
     },
     {
-        "id": 8,
-        "name": "BONUS TRISTAR 1 KG",
-        "RP": 230,
-        "Offer": 220
+        "ProductID": 8,
+        "ProductName": "BONUS TRISTAR 1 KG",
+        "RetailPrice": 230,
+        "OfferPrice": 220
     },
     {
-        "id": 9,
-        "name": "BRITE 1O WALA",
-        "RP": 120,
-        "Offer": 114
+        "ProductID": 9,
+        "ProductName": "BRITE 1O WALA",
+        "RetailPrice": 120,
+        "OfferPrice": 114
     },
     {
-        "id": 10,
-        "name": "BRITE 5O WALA",
-        "RP": 50,
-        "Offer": 48
+        "ProductID": 10,
+        "ProductName": "BRITE 5O WALA",
+        "RetailPrice": 50,
+        "OfferPrice": 48
     },
     {
-        "id": 11,
-        "name": "BRITE  1  KG",
-        "RP": 549,
-        "Offer": 505
+        "ProductID": 11,
+        "ProductName": "BRITE  1  KG",
+        "RetailPrice": 549,
+        "OfferPrice": 505
     },
     {
-        "id": 12,
-        "name": "LEMON MAX LIQUID  275  ML",
-        "RP": 165,
-        "Offer": 157
+        "ProductID": 12,
+        "ProductName": "LEMON MAX LIQUID  275  ML",
+        "RetailPrice": 165,
+        "OfferPrice": 157
     },
     {
-        "id": 13,
-        "name": "LEMON MAX LIQUID  475  ML ",
-        "RP": 255,
-        "Offer": 240
+        "ProductID": 13,
+        "ProductName": "LEMON MAX LIQUID  475  ML ",
+        "RetailPrice": 255,
+        "OfferPrice": 240
     },
     {
-        "id": 14,
-        "name": "LEMON MAX LIQUID  125  ML  POUCH",
-        "RP": 50,
-        "Offer": 48
+        "ProductID": 14,
+        "ProductName": "LEMON MAX LIQUID  125  ML  POUCH",
+        "RetailPrice": 50,
+        "OfferPrice": 48
     },
     {
-        "id": 15,
-        "name": "LEMON MAX LIQUID  475  ML  POUCH",
-        "RP": 210,
-        "Offer": 195
+        "ProductID": 15,
+        "ProductName": "LEMON MAX LIQUID  475  ML  POUCH",
+        "RetailPrice": 210,
+        "OfferPrice": 195
     },
     {
-        "id": 16,
-        "name": "LEMON MAX BAR SINGLE",
-        "RP": 75,
-        "Offer": 71
+        "ProductID": 16,
+        "ProductName": "LEMON MAX BAR SINGLE",
+        "RetailPrice": 75,
+        "OfferPrice": 71
     },
     {
-        "id": 17,
-        "name": "ROBIN BLEACH 5OO  ML",
-        "RP": 650,
-        "Offer": 565
+        "ProductID": 17,
+        "ProductName": "ROBIN BLEACH 5OO  ML",
+        "RetailPrice": 650,
+        "OfferPrice": 565
     },
     {
-        "id": 18,
-        "name": "DETTOL MPC  5OO  ML  BLUE",
-        "RP": 825,
-        "Offer": 750
+        "ProductID": 18,
+        "ProductName": "DETTOL MPC  5OO  ML  BLUE",
+        "RetailPrice": 825,
+        "OfferPrice": 750
     },
     {
-        "id": 19,
-        "name": "DETTOL MPC  5OO  ML  RED",
-        "RP": 825,
-        "Offer": 750
+        "ProductID": 19,
+        "ProductName": "DETTOL MPC  5OO  ML  RED",
+        "RetailPrice": 825,
+        "OfferPrice": 750
     },
     {
-        "id": 20,
-        "name": "DETTOL MPC  5OO  ML  YELLOW",
-        "RP": 825,
-        "Offer": 750
+        "ProductID": 20,
+        "ProductName": "DETTOL MPC  5OO  ML  YELLOW",
+        "RetailPrice": 825,
+        "OfferPrice": 750
     },
     {
-        "id": 21,
-        "name": "DETTOL MPC  1  LTR  RED [OLD]",
-        "RP": 1450,
-        "Offer": 1270
+        "ProductID": 21,
+        "ProductName": "DETTOL MPC  1  LTR  RED [OLD]",
+        "RetailPrice": 1450,
+        "OfferPrice": 1270
     },
     {
-        "id": 22,
-        "name": "DETTOL MPC  1  LTR  YELLOW [OLD]",
-        "RP": 1450,
-        "Offer": 1270
+        "ProductID": 22,
+        "ProductName": "DETTOL MPC  1  LTR  YELLOW [OLD]",
+        "RetailPrice": 1450,
+        "OfferPrice": 1270
     },
     {
-        "id": 23,
-        "name": "DETTOL MPC  1  LTR  BLUE",
-        "RP": 1600,
-        "Offer": 1400
+        "ProductID": 23,
+        "ProductName": "DETTOL MPC  1  LTR  BLUE",
+        "RetailPrice": 1600,
+        "OfferPrice": 1400
     },
     {
-        "id": 24,
-        "name": "DETTOL MPC  1  LTR  PURPLE",
-        "RP": 1600,
-        "Offer": 1400
+        "ProductID": 24,
+        "ProductName": "DETTOL MPC  1  LTR  PURPLE",
+        "RetailPrice": 1600,
+        "OfferPrice": 1400
     },
     {
-        "id": 25,
-        "name": "DETTOL  LIQUID  (ANTISEPTIC)  5O ML",
-        "RP": 250,
-        "Offer": 215
+        "ProductID": 25,
+        "ProductName": "DETTOL  LIQUID  (ANTISEPTIC)  5O ML",
+        "RetailPrice": 250,
+        "OfferPrice": 215
     },
     {
-        "id": 26,
-        "name": "DETTOL  LIQUID  (ANTISEPTIC)  1OO ML",
-        "RP": 495,
-        "Offer": 440
+        "ProductID": 26,
+        "ProductName": "DETTOL  LIQUID  (ANTISEPTIC)  1OO ML",
+        "RetailPrice": 495,
+        "OfferPrice": 440
     },
     {
-        "id": 27,
-        "name": "DETTOL  LIQUID  (ANTISEPTIC)  5OO ML",
-        "RP": 1499,
-        "Offer": 1350
+        "ProductID": 27,
+        "ProductName": "DETTOL  LIQUID  (ANTISEPTIC)  5OO ML",
+        "RetailPrice": 1499,
+        "OfferPrice": 1350
     },
     {
-        "id": 28,
-        "name": "DETTOL  LIQUID  (ANTISEPTIC)  1 LTR",
-        "RP": 2900,
-        "Offer": 2580
+        "ProductID": 28,
+        "ProductName": "DETTOL  LIQUID  (ANTISEPTIC)  1 LTR",
+        "RetailPrice": 2900,
+        "OfferPrice": 2580
     },
     {
-        "id": 29,
-        "name": "HARPIC BATHROOM (RED) 25O ML",
-        "RP": 280,
-        "Offer": 258
+        "ProductID": 29,
+        "ProductName": "HARPIC BATHROOM (RED) 25O ML",
+        "RetailPrice": 280,
+        "OfferPrice": 258
     },
     {
-        "id": 30,
-        "name": "HARPIC BATHROOM (RED) 5OO ML",
-        "RP": 575,
-        "Offer": 520
+        "ProductID": 30,
+        "ProductName": "HARPIC BATHROOM (RED) 5OO ML",
+        "RetailPrice": 575,
+        "OfferPrice": 520
     },
     {
-        "id": 31,
-        "name": "HARPIC  (BLUE) 25O ML",
-        "RP": 280,
-        "Offer": 258
+        "ProductID": 31,
+        "ProductName": "HARPIC  (BLUE) 25O ML",
+        "RetailPrice": 280,
+        "OfferPrice": 258
     },
     {
-        "id": 32,
-        "name": "HARPIC  (BLUE) 5OO ML",
-        "RP": 575,
-        "Offer": 520
+        "ProductID": 32,
+        "ProductName": "HARPIC  (BLUE) 5OO ML",
+        "RetailPrice": 575,
+        "OfferPrice": 520
     },
     {
-        "id": 33,
-        "name": "HARPIC  (BLUE) 7OO ML",
-        "RP": 850,
-        "Offer": 775
+        "ProductID": 33,
+        "ProductName": "HARPIC  (BLUE) 7OO ML",
+        "RetailPrice": 850,
+        "OfferPrice": 775
     },
     {
-        "id": 34,
-        "name": "HARPIC  (BLUE) 1 LTR",
-        "RP": 1099,
-        "Offer": 970
+        "ProductID": 34,
+        "ProductName": "HARPIC  (BLUE) 1 LTR",
+        "RetailPrice": 1099,
+        "OfferPrice": 970
     },
     {
-        "id": 35,
-        "name": "KIWI POLISH LIQUID 75 ML (BROWN)",
-        "RP": 340,
-        "Offer": 280
+        "ProductID": 35,
+        "ProductName": "KIWI POLISH LIQUID 75 ML (BROWN)",
+        "RetailPrice": 340,
+        "OfferPrice": 280
     },
     {
-        "id": 36,
-        "name": "KIWI POLISH TIN (BLACK) 2O ML",
-        "RP": 230,
-        "Offer": 195
+        "ProductID": 36,
+        "ProductName": "KIWI POLISH TIN (BLACK) 2O ML",
+        "RetailPrice": 230,
+        "OfferPrice": 195
     },
     {
-        "id": 37,
-        "name": "KIWI POLISH TIN (BLACK) 4O ML",
-        "RP": 445,
-        "Offer": 385
+        "ProductID": 37,
+        "ProductName": "KIWI POLISH TIN (BLACK) 4O ML",
+        "RetailPrice": 445,
+        "OfferPrice": 385
     },
     {
-        "id": 38,
-        "name": "GILLETTE BLUE 2 PLUS (24 PS CARD)",
-        "RP": null,
-        "Offer": 150
+        "ProductID": 38,
+        "ProductName": "GILLETTE BLUE 2 PLUS (24 PS CARD)",
+        "RetailPrice": null,
+        "OfferPrice": 150
     },
     {
-        "id": 39,
-        "name": "GILLETTE BLUE 2 RAZOR 5+1 IMPORTED",
-        "RP": null,
-        "Offer": 600
+        "ProductID": 39,
+        "ProductName": "GILLETTE BLUE 2 RAZOR 5+1 IMPORTED",
+        "RetailPrice": null,
+        "OfferPrice": 600
     },
     {
-        "id": 40,
-        "name": "GILLETTE BLUE 3 (10 PS CARD)",
-        "RP": null,
-        "Offer": 265
+        "ProductID": 40,
+        "ProductName": "GILLETTE BLUE 3 (10 PS CARD)",
+        "RetailPrice": null,
+        "OfferPrice": 265
     },
     {
-        "id": 41,
-        "name": "BIG PAKI RAZOR",
-        "RP": null,
-        "Offer": 425
+        "ProductID": 41,
+        "ProductName": "BIG PAKI RAZOR",
+        "RetailPrice": null,
+        "OfferPrice": 425
     },
     {
-        "id": 42,
-        "name": "TOSHIBA AAA RED",
-        "RP": null,
-        "Offer": 1270
+        "ProductID": 42,
+        "ProductName": "TOSHIBA AAA RED",
+        "RetailPrice": null,
+        "OfferPrice": 1270
     },
     {
-        "id": 43,
-        "name": "TOSHIBA AA RED",
-        "RP": null,
-        "Offer": 1270
+        "ProductID": 43,
+        "ProductName": "TOSHIBA AA RED",
+        "RetailPrice": null,
+        "OfferPrice": 1270
     },
     {
-        "id": 44,
-        "name": "TOSHIBA AAA GREEN",
-        "RP": null,
-        "Offer": 1390
+        "ProductID": 44,
+        "ProductName": "TOSHIBA AAA GREEN",
+        "RetailPrice": null,
+        "OfferPrice": 1390
     },
     {
-        "id": 45,
-        "name": "TOSHIBA AA GREEN",
-        "RP": null,
-        "Offer": 1390
+        "ProductID": 45,
+        "ProductName": "TOSHIBA AA GREEN",
+        "RetailPrice": null,
+        "OfferPrice": 1390
     },
     {
-        "id": 46,
-        "name": "TOSHIBA SIZE C",
-        "RP": null,
-        "Offer": 2050
+        "ProductID": 46,
+        "ProductName": "TOSHIBA SIZE C",
+        "RetailPrice": null,
+        "OfferPrice": 2050
     },
     {
-        "id": 47,
-        "name": "TOSHIBA SIZE D",
-        "RP": null,
-        "Offer": 2880
+        "ProductID": 47,
+        "ProductName": "TOSHIBA SIZE D",
+        "RetailPrice": null,
+        "OfferPrice": 2880
     },
     {
-        "id": 48,
-        "name": "COLGATE 22 GM",
-        "RP": 40,
-        "Offer": 37
+        "ProductID": 48,
+        "ProductName": "COLGATE 22 GM",
+        "RetailPrice": 40,
+        "OfferPrice": 37
     },
     {
-        "id": 49,
-        "name": "COLGATE 4O  GM",
-        "RP": 65,
-        "Offer": 61
+        "ProductID": 49,
+        "ProductName": "COLGATE 4O  GM",
+        "RetailPrice": 65,
+        "OfferPrice": 61
     },
     {
-        "id": 50,
-        "name": "ROSE PETAL MULTI",
-        "RP": 370,
-        "Offer": 300
+        "ProductID": 50,
+        "ProductName": "ROSE PETAL MULTI",
+        "RetailPrice": 370,
+        "OfferPrice": 300
     },
     {
-        "id": 51,
-        "name": "OLIVIA HAIR COLOR: NO.7 (MOCCA) [2]",
-        "RP": 280,
-        "Offer": 235
+        "ProductID": 51,
+        "ProductName": "OLIVIA HAIR COLOR: NO.7 (MOCCA) [2]",
+        "RetailPrice": 280,
+        "OfferPrice": 235
     },
     {
-        "id": 52,
-        "name": "OLIVIA HAIR COLOR: NO.8 (BURGUNDY)",
-        "RP": 280,
-        "Offer": 235
+        "ProductID": 52,
+        "ProductName": "OLIVIA HAIR COLOR: NO.8 (BURGUNDY)",
+        "RetailPrice": 280,
+        "OfferPrice": 235
     },
     {
-        "id": 53,
-        "name": "OLIVIA HAIR COLOR: NO.9 (MAHOGANY)",
-        "RP": 280,
-        "Offer": 235
+        "ProductID": 53,
+        "ProductName": "OLIVIA HAIR COLOR: NO.9 (MAHOGANY)",
+        "RetailPrice": 280,
+        "OfferPrice": 235
     },
     {
-        "id": 54,
-        "name": "ALWAYS MAXI SINGLE PINK",
-        "RP": null,
-        "Offer": 395
+        "ProductID": 54,
+        "ProductName": "ALWAYS MAXI SINGLE PINK",
+        "RetailPrice": null,
+        "OfferPrice": 395
     },
     {
-        "id": 55,
-        "name": "ALWAYS MAXI SINGLE BLUE",
-        "RP": null,
-        "Offer": 395
+        "ProductID": 55,
+        "ProductName": "ALWAYS MAXI SINGLE BLUE",
+        "RetailPrice": null,
+        "OfferPrice": 395
     },
     {
-        "id": 56,
-        "name": "ALWAYS ULTRA SINGLE PINK",
-        "RP": null,
-        "Offer": 395
+        "ProductID": 56,
+        "ProductName": "ALWAYS ULTRA SINGLE PINK",
+        "RetailPrice": null,
+        "OfferPrice": 395
     },
     {
-        "id": 57,
-        "name": "BUTTERFLY 16 XXL",
-        "RP": 450,
-        "Offer": 385
+        "ProductID": 57,
+        "ProductName": "BUTTERFLY 16 XXL",
+        "RetailPrice": 450,
+        "OfferPrice": 385
     },
     {
-        "id": 58,
-        "name": "BUTTERFLY 8 L",
-        "RP": 230,
-        "Offer": 205
+        "ProductID": 58,
+        "ProductName": "BUTTERFLY 8 L",
+        "RetailPrice": 230,
+        "OfferPrice": 205
     },
     {
-        "id": 59,
-        "name": "BUTTERFLY 7 XL",
-        "RP": 230,
-        "Offer": 205
+        "ProductID": 59,
+        "ProductName": "BUTTERFLY 7 XL",
+        "RetailPrice": 230,
+        "OfferPrice": 205
     },
     {
-        "id": 60,
-        "name": "VEET CREAM 5O GM GREEN",
-        "RP": 460,
-        "Offer": 410
+        "ProductID": 60,
+        "ProductName": "VEET CREAM 5O GM GREEN",
+        "RetailPrice": 460,
+        "OfferPrice": 410
     },
     {
-        "id": 61,
-        "name": "VEET CREAM 5O GM PINK",
-        "RP": 460,
-        "Offer": 410
+        "ProductID": 61,
+        "ProductName": "VEET CREAM 5O GM PINK",
+        "RetailPrice": 460,
+        "OfferPrice": 410
     },
     {
-        "id": 62,
-        "name": "VEET CREAM 5O GM BLUE",
-        "RP": 460,
-        "Offer": 410
+        "ProductID": 62,
+        "ProductName": "VEET CREAM 5O GM BLUE",
+        "RetailPrice": 460,
+        "OfferPrice": 410
     },
     {
-        "id": 63,
-        "name": "VEET CREAM 1OO GM BLUE",
-        "RP": 899,
-        "Offer": 810
+        "ProductID": 63,
+        "ProductName": "VEET CREAM 1OO GM BLUE",
+        "RetailPrice": 899,
+        "OfferPrice": 810
     },
     {
-        "id": 64,
-        "name": "EU CREAM  SMALL",
-        "RP": 150,
-        "Offer": 135
+        "ProductID": 64,
+        "ProductName": "EU CREAM  SMALL",
+        "RetailPrice": 150,
+        "OfferPrice": 135
     },
     {
-        "id": 65,
-        "name": "EU CREAM  MEDIUM",
-        "RP": 300,
-        "Offer": 270
+        "ProductID": 65,
+        "ProductName": "EU CREAM  MEDIUM",
+        "RetailPrice": 300,
+        "OfferPrice": 270
     },
     {
-        "id": 66,
-        "name": "COCKROACH KILLER  6O  GM",
-        "RP": 399,
-        "Offer": 300
+        "ProductID": 66,
+        "ProductName": "COCKROACH KILLER  6O  GM",
+        "RetailPrice": 399,
+        "OfferPrice": 300
     },
     {
-        "id": 67,
-        "name": "MORTEIN FIK  55O  ML",
-        "RP": null,
-        "Offer": 930
+        "ProductID": 67,
+        "ProductName": "MORTEIN FIK  55O  ML",
+        "RetailPrice": null,
+        "OfferPrice": 930
     },
     {
-        "id": 68,
-        "name": "MORTEIN CIK  55O  ML",
-        "RP": null,
-        "Offer": 930
+        "ProductID": 68,
+        "ProductName": "MORTEIN CIK  55O  ML",
+        "RetailPrice": null,
+        "OfferPrice": 930
     },
     {
-        "id": 69,
-        "name": "MORTEIN FIK  375  ML",
-        "RP": null,
-        "Offer": 685
+        "ProductID": 69,
+        "ProductName": "MORTEIN FIK  375  ML",
+        "RetailPrice": null,
+        "OfferPrice": 685
     },
     {
-        "id": 70,
-        "name": "MORTEIN CIK  375  ML",
-        "RP": null,
-        "Offer": 745
+        "ProductID": 70,
+        "ProductName": "MORTEIN CIK  375  ML",
+        "RetailPrice": null,
+        "OfferPrice": 745
     },
     {
-        "id": 71,
-        "name": "MORTEIN FIK 3OO  ML",
-        "RP": null,
-        "Offer": 500
+        "ProductID": 71,
+        "ProductName": "MORTEIN FIK 3OO  ML",
+        "RetailPrice": null,
+        "OfferPrice": 500
     },
     {
-        "id": 72,
-        "name": "MORTEIN MACHINE",
-        "RP": 650,
-        "Offer": 530
+        "ProductID": 72,
+        "ProductName": "MORTEIN MACHINE",
+        "RetailPrice": 650,
+        "OfferPrice": 530
     },
     {
-        "id": 73,
-        "name": "MORTEIN REFILL 30 N",
-        "RP": null,
-        "Offer": 220
+        "ProductID": 73,
+        "ProductName": "MORTEIN REFILL 30 N",
+        "RetailPrice": null,
+        "OfferPrice": 220
     },
     {
-        "id": 74,
-        "name": "MORTEIN COIL",
-        "RP": null,
-        "Offer": 185
+        "ProductID": 74,
+        "ProductName": "MORTEIN COIL",
+        "RetailPrice": null,
+        "OfferPrice": 185
     },
     {
-        "id": 75,
-        "name": "KING REFILL 60 NIGHT",
-        "RP": null,
-        "Offer": 210
+        "ProductID": 75,
+        "ProductName": "KING REFILL 60 NIGHT",
+        "RetailPrice": null,
+        "OfferPrice": 210
     },
     {
-        "id": 76,
-        "name": "KING COIL (BLACK)",
-        "RP": null,
-        "Offer": 90
+        "ProductID": 76,
+        "ProductName": "KING COIL (BLACK)",
+        "RetailPrice": null,
+        "OfferPrice": 90
     },
     {
-        "id": 77,
-        "name": "KING COIL (GREEN)",
-        "RP": null,
-        "Offer": 90
+        "ProductID": 77,
+        "ProductName": "KING COIL (GREEN)",
+        "RetailPrice": null,
+        "OfferPrice": 90
     },
     {
-        "id": 78,
-        "name": "KINGTOX  SPRAY 3OO ML",
-        "RP": null,
-        "Offer": 395
+        "ProductID": 78,
+        "ProductName": "KINGTOX  SPRAY 3OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 395
     },
     {
-        "id": 79,
-        "name": "KINGTOX  SPRAY 4OO ML",
-        "RP": null,
-        "Offer": 498
+        "ProductID": 79,
+        "ProductName": "KINGTOX  SPRAY 4OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 498
     },
     {
-        "id": 80,
-        "name": "KINGTOX  SPRAY 6OO ML",
-        "RP": null,
-        "Offer": 660
+        "ProductID": 80,
+        "ProductName": "KINGTOX  SPRAY 6OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 660
     },
     {
-        "id": 81,
-        "name": "METRO COIL (YELLOW)",
-        "RP": null,
-        "Offer": 85
+        "ProductID": 81,
+        "ProductName": "METRO COIL (YELLOW)",
+        "RetailPrice": null,
+        "OfferPrice": 85
     },
     {
-        "id": 82,
-        "name": "METRO COIL (ROSE)",
-        "RP": null,
-        "Offer": 85
+        "ProductID": 82,
+        "ProductName": "METRO COIL (ROSE)",
+        "RetailPrice": null,
+        "OfferPrice": 85
     },
     {
-        "id": 83,
-        "name": "METRO COIL (LAVENDER)",
-        "RP": null,
-        "Offer": 85
+        "ProductID": 83,
+        "ProductName": "METRO COIL (LAVENDER)",
+        "RetailPrice": null,
+        "OfferPrice": 85
     },
     {
-        "id": 84,
-        "name": "METRO COIL (JASMINE)",
-        "RP": null,
-        "Offer": 85
+        "ProductID": 84,
+        "ProductName": "METRO COIL (JASMINE)",
+        "RetailPrice": null,
+        "OfferPrice": 85
     },
     {
-        "id": 85,
-        "name": "METRO COIL (BAKHOOR)",
-        "RP": null,
-        "Offer": 85
+        "ProductID": 85,
+        "ProductName": "METRO COIL (BAKHOOR)",
+        "RetailPrice": null,
+        "OfferPrice": 85
     },
     {
-        "id": 86,
-        "name": "METRO REFILL 60 NIGHT",
-        "RP": null,
-        "Offer": 150
+        "ProductID": 86,
+        "ProductName": "METRO REFILL 60 NIGHT",
+        "RetailPrice": null,
+        "OfferPrice": 150
     },
     {
-        "id": 87,
-        "name": "OSAKA TAPE (WHITE)",
-        "RP": null,
-        "Offer": 430
+        "ProductID": 87,
+        "ProductName": "OSAKA TAPE (WHITE)",
+        "RetailPrice": null,
+        "OfferPrice": 430
     },
     {
-        "id": 88,
-        "name": "OSAKA TAPE (RED)",
-        "RP": null,
-        "Offer": 430
+        "ProductID": 88,
+        "ProductName": "OSAKA TAPE (RED)",
+        "RetailPrice": null,
+        "OfferPrice": 430
     },
     {
-        "id": 89,
-        "name": "OSAKA TAPE (BLACK)",
-        "RP": null,
-        "Offer": 430
+        "ProductID": 89,
+        "ProductName": "OSAKA TAPE (BLACK)",
+        "RetailPrice": null,
+        "OfferPrice": 430
     },
     {
-        "id": 90,
-        "name": "ELFY",
-        "RP": null,
-        "Offer": 150
+        "ProductID": 90,
+        "ProductName": "ELFY",
+        "RetailPrice": null,
+        "OfferPrice": 150
     },
     {
-        "id": 91,
-        "name": "UHU  ",
-        "RP": null,
-        "Offer": 450
+        "ProductID": 91,
+        "ProductName": "UHU  ",
+        "RetailPrice": null,
+        "OfferPrice": 450
     },
     {
-        "id": 92,
-        "name": "MAGIC",
-        "RP": null,
-        "Offer": 540
+        "ProductID": 92,
+        "ProductName": "MAGIC",
+        "RetailPrice": null,
+        "OfferPrice": 540
     },
     {
-        "id": 93,
-        "name": "SAMADBOND",
-        "RP": null,
-        "Offer": 1030
+        "ProductID": 93,
+        "ProductName": "SAMADBOND",
+        "RetailPrice": null,
+        "OfferPrice": 1030
     },
     {
-        "id": 94,
-        "name": "CARE HONEY LOTION (SMALL)",
-        "RP": 220,
-        "Offer": 205
+        "ProductID": 94,
+        "ProductName": "CARE HONEY LOTION (SMALL)",
+        "RetailPrice": 220,
+        "OfferPrice": 205
     },
     {
-        "id": 95,
-        "name": "PONDS LOTION 1OO ML",
-        "RP": 330,
-        "Offer": 305
+        "ProductID": 95,
+        "ProductName": "PONDS LOTION 1OO ML",
+        "RetailPrice": 330,
+        "OfferPrice": 305
     },
     {
-        "id": 96,
-        "name": "PONDS LOTION 2OO ML",
-        "RP": 600,
-        "Offer": 540
+        "ProductID": 96,
+        "ProductName": "PONDS LOTION 2OO ML",
+        "RetailPrice": 600,
+        "OfferPrice": 540
     },
     {
-        "id": 97,
-        "name": "FAIR  &  LOVELY JAR 7O GM",
-        "RP": 400,
-        "Offer": 360
+        "ProductID": 97,
+        "ProductName": "FAIR  &  LOVELY JAR 7O GM",
+        "RetailPrice": 400,
+        "OfferPrice": 360
     },
     {
-        "id": 98,
-        "name": "GOLDEN PEARL 28  GM",
-        "RP": 360,
-        "Offer": 310
+        "ProductID": 98,
+        "ProductName": "GOLDEN PEARL 28  GM",
+        "RetailPrice": 360,
+        "OfferPrice": 310
     },
     {
-        "id": 99,
-        "name": "TIBET POMMADE ",
-        "RP": 110,
-        "Offer": 102
+        "ProductID": 99,
+        "ProductName": "TIBET POMMADE ",
+        "RetailPrice": 110,
+        "OfferPrice": 102
     },
     {
-        "id": 100,
-        "name": "TIBET SNOW",
-        "RP": 200,
-        "Offer": 188
+        "ProductID": 100,
+        "ProductName": "TIBET SNOW",
+        "RetailPrice": 200,
+        "OfferPrice": 188
     },
     {
-        "id": 101,
-        "name": "BLACK CAT POWDER (SMALL)",
-        "RP": 250,
-        "Offer": 220
+        "ProductID": 101,
+        "ProductName": "BLACK CAT POWDER (SMALL)",
+        "RetailPrice": 250,
+        "OfferPrice": 220
     },
     {
-        "id": 102,
-        "name": "BLACK CAT POWDER (LARGE)",
-        "RP": 480,
-        "Offer": 442
+        "ProductID": 102,
+        "ProductName": "BLACK CAT POWDER (LARGE)",
+        "RetailPrice": 480,
+        "OfferPrice": 442
     },
     {
-        "id": 103,
-        "name": "MEDORA POWDER (SMALL)",
-        "RP": 200,
-        "Offer": 185
+        "ProductID": 103,
+        "ProductName": "MEDORA POWDER (SMALL)",
+        "RetailPrice": 200,
+        "OfferPrice": 185
     },
     {
-        "id": 104,
-        "name": "MEDORA POWDER (LARGE)",
-        "RP": 400,
-        "Offer": 370
+        "ProductID": 104,
+        "ProductName": "MEDORA POWDER (LARGE)",
+        "RetailPrice": 400,
+        "OfferPrice": 370
     },
     {
-        "id": 105,
-        "name": "HIMALAYA NEEM FACEWASH 1OO  ML",
-        "RP": 490,
-        "Offer": 430
+        "ProductID": 105,
+        "ProductName": "HIMALAYA NEEM FACEWASH 1OO  ML",
+        "RetailPrice": 490,
+        "OfferPrice": 430
     },
     {
-        "id": 106,
-        "name": "PONDS  FACEWASH 5O GM (PINK)",
-        "RP": 300,
-        "Offer": 275
+        "ProductID": 106,
+        "ProductName": "PONDS  FACEWASH 5O GM (PINK)",
+        "RetailPrice": 300,
+        "OfferPrice": 275
     },
     {
-        "id": 107,
-        "name": "PONDS  FACEWASH 5O GM (BLACK)",
-        "RP": 300,
-        "Offer": 275
+        "ProductID": 107,
+        "ProductName": "PONDS  FACEWASH 5O GM (BLACK)",
+        "RetailPrice": 300,
+        "OfferPrice": 275
     },
     {
-        "id": 108,
-        "name": "CLEAN & CLEAR FACEWASH 5O ML",
-        "RP": null,
-        "Offer": 338
+        "ProductID": 108,
+        "ProductName": "CLEAN & CLEAR FACEWASH 5O ML",
+        "RetailPrice": null,
+        "OfferPrice": 338
     },
     {
-        "id": 109,
-        "name": "CLEAN & CLEAR FACEWASH 1OO ML ",
-        "RP": null,
-        "Offer": 462
+        "ProductID": 109,
+        "ProductName": "CLEAN & CLEAR FACEWASH 1OO ML ",
+        "RetailPrice": null,
+        "OfferPrice": 462
     },
     {
-        "id": 110,
-        "name": "CAPRI  12O  GM YELLOW",
-        "RP": 120,
-        "Offer": 113
+        "ProductID": 110,
+        "ProductName": "CAPRI  12O  GM YELLOW",
+        "RetailPrice": 120,
+        "OfferPrice": 113
     },
     {
-        "id": 111,
-        "name": "DETTOL 85 GM ORIGINAL",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 111,
+        "ProductName": "DETTOL 85 GM ORIGINAL",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 112,
-        "name": "DETTOL 85 GM COOL",
-        "RP": 140,
-        "Offer": 128
+        "ProductID": 112,
+        "ProductName": "DETTOL 85 GM COOL",
+        "RetailPrice": 140,
+        "OfferPrice": 128
     },
     {
-        "id": 113,
-        "name": "DETTOL  85  GM  BUNDLE ORIGINAL",
-        "RP": 355,
-        "Offer": 330
+        "ProductID": 113,
+        "ProductName": "DETTOL  85  GM  BUNDLE ORIGINAL",
+        "RetailPrice": 355,
+        "OfferPrice": 330
     },
     {
-        "id": 114,
-        "name": "DETTOL  85  GM  BUNDLE COOL",
-        "RP": 420,
-        "Offer": 395
+        "ProductID": 114,
+        "ProductName": "DETTOL  85  GM  BUNDLE COOL",
+        "RetailPrice": 420,
+        "OfferPrice": 395
     },
     {
-        "id": 115,
-        "name": "DETTOL  11O  GM ORIGINAL",
-        "RP": 150,
-        "Offer": 139
+        "ProductID": 115,
+        "ProductName": "DETTOL  11O  GM ORIGINAL",
+        "RetailPrice": 150,
+        "OfferPrice": 139
     },
     {
-        "id": 116,
-        "name": "DETTOL  11O  GM COOL",
-        "RP": 150,
-        "Offer": 139
+        "ProductID": 116,
+        "ProductName": "DETTOL  11O  GM COOL",
+        "RetailPrice": 150,
+        "OfferPrice": 139
     },
     {
-        "id": 117,
-        "name": "DETTOL  11O  GM SKINCARE",
-        "RP": 150,
-        "Offer": 139
+        "ProductID": 117,
+        "ProductName": "DETTOL  11O  GM SKINCARE",
+        "RetailPrice": 150,
+        "OfferPrice": 139
     },
     {
-        "id": 118,
-        "name": "DETTOL  11O  GM BUNDLE LEMON",
-        "RP": 560,
-        "Offer": 520
+        "ProductID": 118,
+        "ProductName": "DETTOL  11O  GM BUNDLE LEMON",
+        "RetailPrice": 560,
+        "OfferPrice": 520
     },
     {
-        "id": 119,
-        "name": "DETTOL  11O  GM BUNDLE ORIGINAL",
-        "RP": 560,
-        "Offer": 520
+        "ProductID": 119,
+        "ProductName": "DETTOL  11O  GM BUNDLE ORIGINAL",
+        "RetailPrice": 560,
+        "OfferPrice": 520
     },
     {
-        "id": 120,
-        "name": "DETTOL  11O  GM BUNDLE COOL",
-        "RP": 620,
-        "Offer": 540
+        "ProductID": 120,
+        "ProductName": "DETTOL  11O  GM BUNDLE COOL",
+        "RetailPrice": 620,
+        "OfferPrice": 540
     },
     {
-        "id": 121,
-        "name": "LIFEBUOY  68  GM RED",
-        "RP": 60,
-        "Offer": 57
+        "ProductID": 121,
+        "ProductName": "LIFEBUOY  68  GM RED",
+        "RetailPrice": 60,
+        "OfferPrice": 57
     },
     {
-        "id": 122,
-        "name": "LIFEBUOY  68  GM WHITE",
-        "RP": 60,
-        "Offer": 57
+        "ProductID": 122,
+        "ProductName": "LIFEBUOY  68  GM WHITE",
+        "RetailPrice": 60,
+        "OfferPrice": 57
     },
     {
-        "id": 123,
-        "name": "LIFEBUOY  98  GM RED",
-        "RP": 85,
-        "Offer": 81
+        "ProductID": 123,
+        "ProductName": "LIFEBUOY  98  GM RED",
+        "RetailPrice": 85,
+        "OfferPrice": 81
     },
     {
-        "id": 124,
-        "name": "LIFEBUOY  98  GM GREEN",
-        "RP": 85,
-        "Offer": 81
+        "ProductID": 124,
+        "ProductName": "LIFEBUOY  98  GM GREEN",
+        "RetailPrice": 85,
+        "OfferPrice": 81
     },
     {
-        "id": 125,
-        "name": "LIFEBUOY  98  GM YELLOW",
-        "RP": 85,
-        "Offer": 81
+        "ProductID": 125,
+        "ProductName": "LIFEBUOY  98  GM YELLOW",
+        "RetailPrice": 85,
+        "OfferPrice": 81
     },
     {
-        "id": 126,
-        "name": "LIFEBUOY  128  GM WHITE",
-        "RP": 105,
-        "Offer": 100
+        "ProductID": 126,
+        "ProductName": "LIFEBUOY  128  GM WHITE",
+        "RetailPrice": 105,
+        "OfferPrice": 100
     },
     {
-        "id": 127,
-        "name": "SAFEGUARD  103  GM WHITE",
-        "RP": 140,
-        "Offer": 132
+        "ProductID": 127,
+        "ProductName": "SAFEGUARD  103  GM WHITE",
+        "RetailPrice": 140,
+        "OfferPrice": 132
     },
     {
-        "id": 128,
-        "name": "SAFEGUARD  103  GM PURPLE",
-        "RP": 140,
-        "Offer": 132
+        "ProductID": 128,
+        "ProductName": "SAFEGUARD  103  GM PURPLE",
+        "RetailPrice": 140,
+        "OfferPrice": 132
     },
     {
-        "id": 129,
-        "name": "PALMOLIVE 7O  GM YELLOW",
-        "RP": 80,
-        "Offer": 76
+        "ProductID": 129,
+        "ProductName": "PALMOLIVE 7O  GM YELLOW",
+        "RetailPrice": 80,
+        "OfferPrice": 76
     },
     {
-        "id": 130,
-        "name": "PALMOLIVE  98  GM PINK",
-        "RP": 100,
-        "Offer": 94
+        "ProductID": 130,
+        "ProductName": "PALMOLIVE  98  GM PINK",
+        "RetailPrice": 100,
+        "OfferPrice": 94
     },
     {
-        "id": 131,
-        "name": "PALMOLIVE  98  GM GREEN",
-        "RP": 100,
-        "Offer": 94
+        "ProductID": 131,
+        "ProductName": "PALMOLIVE  98  GM GREEN",
+        "RetailPrice": 100,
+        "OfferPrice": 94
     },
     {
-        "id": 132,
-        "name": "PALMOLIVE  98  GM YELLOW",
-        "RP": 100,
-        "Offer": 94
+        "ProductID": 132,
+        "ProductName": "PALMOLIVE  98  GM YELLOW",
+        "RetailPrice": 100,
+        "OfferPrice": 94
     },
     {
-        "id": 133,
-        "name": "PALMOLIVE  98  GM ORANGE",
-        "RP": 100,
-        "Offer": 94
+        "ProductID": 133,
+        "ProductName": "PALMOLIVE  98  GM ORANGE",
+        "RetailPrice": 100,
+        "OfferPrice": 94
     },
     {
-        "id": 134,
-        "name": "PALMOLIVE 128  GM PINK",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 134,
+        "ProductName": "PALMOLIVE 128  GM PINK",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 135,
-        "name": "PALMOLIVE 128  GM GREEN",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 135,
+        "ProductName": "PALMOLIVE 128  GM GREEN",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 136,
-        "name": "PALMOLIVE 128  GM YELLOW",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 136,
+        "ProductName": "PALMOLIVE 128  GM YELLOW",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 137,
-        "name": "PALMOLIVE 128  GM ORANGE",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 137,
+        "ProductName": "PALMOLIVE 128  GM ORANGE",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 138,
-        "name": "PALMOLIVE 128  GM BLACK",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 138,
+        "ProductName": "PALMOLIVE 128  GM BLACK",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 139,
-        "name": "LUX  5O  GM PINK",
-        "RP": 50,
-        "Offer": 48
+        "ProductID": 139,
+        "ProductName": "LUX  5O  GM PINK",
+        "RetailPrice": 50,
+        "OfferPrice": 48
     },
     {
-        "id": 140,
-        "name": "LUX  7O  GM WHITE",
-        "RP": 80,
-        "Offer": 77
+        "ProductID": 140,
+        "ProductName": "LUX  7O  GM WHITE",
+        "RetailPrice": 80,
+        "OfferPrice": 77
     },
     {
-        "id": 141,
-        "name": "LUX  98  GM WHITE",
-        "RP": 100,
-        "Offer": 95
+        "ProductID": 141,
+        "ProductName": "LUX  98  GM WHITE",
+        "RetailPrice": 100,
+        "OfferPrice": 95
     },
     {
-        "id": 142,
-        "name": "LUX  128  GM WHITE",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 142,
+        "ProductName": "LUX  128  GM WHITE",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 143,
-        "name": "LUX  128  GM PINK",
-        "RP": 130,
-        "Offer": 122
+        "ProductID": 143,
+        "ProductName": "LUX  128  GM PINK",
+        "RetailPrice": 130,
+        "OfferPrice": 122
     },
     {
-        "id": 144,
-        "name": "DOVE SOAP 135 GM BLUE",
-        "RP": null,
-        "Offer": 330
+        "ProductID": 144,
+        "ProductName": "DOVE SOAP 135 GM BLUE",
+        "RetailPrice": null,
+        "OfferPrice": 330
     },
     {
-        "id": 145,
-        "name": "DOVE SOAP 135 GM PINK",
-        "RP": null,
-        "Offer": 330
+        "ProductID": 145,
+        "ProductName": "DOVE SOAP 135 GM PINK",
+        "RetailPrice": null,
+        "OfferPrice": 330
     },
     {
-        "id": 146,
-        "name": "IMPERIAL LEATHER SOAP 2OO  GM",
-        "RP": null,
-        "Offer": 330
+        "ProductID": 146,
+        "ProductName": "IMPERIAL LEATHER SOAP 2OO  GM",
+        "RetailPrice": null,
+        "OfferPrice": 330
     },
     {
-        "id": 147,
-        "name": "SKIN WHITE 1OO GM  PINK",
-        "RP": 140,
-        "Offer": 122
+        "ProductID": 147,
+        "ProductName": "SKIN WHITE 1OO GM  PINK",
+        "RetailPrice": 140,
+        "OfferPrice": 122
     },
     {
-        "id": 148,
-        "name": "DETTOL POUCH 15OML ORIGINAL",
-        "RP": 215,
-        "Offer": 200
+        "ProductID": 148,
+        "ProductName": "DETTOL POUCH 15OML ORIGINAL",
+        "RetailPrice": 215,
+        "OfferPrice": 200
     },
     {
-        "id": 149,
-        "name": "DETTOL POUCH 15OML SKINCARE",
-        "RP": 215,
-        "Offer": 200
+        "ProductID": 149,
+        "ProductName": "DETTOL POUCH 15OML SKINCARE",
+        "RetailPrice": 215,
+        "OfferPrice": 200
     },
     {
-        "id": 150,
-        "name": "DETTOL BOTTLE 25O ML ORIGINAL",
-        "RP": 550,
-        "Offer": 500
+        "ProductID": 150,
+        "ProductName": "DETTOL BOTTLE 25O ML ORIGINAL",
+        "RetailPrice": 550,
+        "OfferPrice": 500
     },
     {
-        "id": 151,
-        "name": "DETTOL BOTTLE 25O ML SKINCARE",
-        "RP": 550,
-        "Offer": 500
+        "ProductID": 151,
+        "ProductName": "DETTOL BOTTLE 25O ML SKINCARE",
+        "RetailPrice": 550,
+        "OfferPrice": 500
     },
     {
-        "id": 152,
-        "name": "LIFEBUOY  9O  ML BROWN",
-        "RP": 150,
-        "Offer": 140
+        "ProductID": 152,
+        "ProductName": "LIFEBUOY  9O  ML BROWN",
+        "RetailPrice": 150,
+        "OfferPrice": 140
     },
     {
-        "id": 153,
-        "name": "LIFEBUOY  9O  ML PIYAAZ",
-        "RP": 150,
-        "Offer": 140
+        "ProductID": 153,
+        "ProductName": "LIFEBUOY  9O  ML PIYAAZ",
+        "RetailPrice": 150,
+        "OfferPrice": 140
     },
     {
-        "id": 154,
-        "name": "LIFEBUOY  9O  ML GREEN",
-        "RP": 150,
-        "Offer": 140
+        "ProductID": 154,
+        "ProductName": "LIFEBUOY  9O  ML GREEN",
+        "RetailPrice": 150,
+        "OfferPrice": 140
     },
     {
-        "id": 155,
-        "name": "LIFEBUOY 175 ML PIYAAZ",
-        "RP": 340,
-        "Offer": 315
+        "ProductID": 155,
+        "ProductName": "LIFEBUOY 175 ML PIYAAZ",
+        "RetailPrice": 340,
+        "OfferPrice": 315
     },
     {
-        "id": 156,
-        "name": "LIFEBUOY 175 ML GOLDEN",
-        "RP": 340,
-        "Offer": 315
+        "ProductID": 156,
+        "ProductName": "LIFEBUOY 175 ML GOLDEN",
+        "RetailPrice": 340,
+        "OfferPrice": 315
     },
     {
-        "id": 157,
-        "name": "LIFEBUOY 375 ML PIYAAZ ",
-        "RP": 599,
-        "Offer": 560
+        "ProductID": 157,
+        "ProductName": "LIFEBUOY 375 ML PIYAAZ ",
+        "RetailPrice": 599,
+        "OfferPrice": 560
     },
     {
-        "id": 158,
-        "name": "LIFEBUOY 375 ML GREEN",
-        "RP": 599,
-        "Offer": 560
+        "ProductID": 158,
+        "ProductName": "LIFEBUOY 375 ML GREEN",
+        "RetailPrice": 599,
+        "OfferPrice": 560
     },
     {
-        "id": 159,
-        "name": "SUNSILK  9O  ML PINK",
-        "RP": 190,
-        "Offer": 178
+        "ProductID": 159,
+        "ProductName": "SUNSILK  9O  ML PINK",
+        "RetailPrice": 190,
+        "OfferPrice": 178
     },
     {
-        "id": 160,
-        "name": "SUNSILK  9O  ML BLACK",
-        "RP": 190,
-        "Offer": 178
+        "ProductID": 160,
+        "ProductName": "SUNSILK  9O  ML BLACK",
+        "RetailPrice": 190,
+        "OfferPrice": 178
     },
     {
-        "id": 161,
-        "name": "SUNSILK  18O  ML  BLACK",
-        "RP": 420,
-        "Offer": 395
+        "ProductID": 161,
+        "ProductName": "SUNSILK  18O  ML  BLACK",
+        "RetailPrice": 420,
+        "OfferPrice": 395
     },
     {
-        "id": 162,
-        "name": "SUNSILK  18O  ML  PINK",
-        "RP": 420,
-        "Offer": 395
+        "ProductID": 162,
+        "ProductName": "SUNSILK  18O  ML  PINK",
+        "RetailPrice": 420,
+        "OfferPrice": 395
     },
     {
-        "id": 163,
-        "name": "SUNSILK  18O  ML  GREEN",
-        "RP": 420,
-        "Offer": 395
+        "ProductID": 163,
+        "ProductName": "SUNSILK  18O  ML  GREEN",
+        "RetailPrice": 420,
+        "OfferPrice": 395
     },
     {
-        "id": 164,
-        "name": "SUNSILK  18O  ML  GOLDEN",
-        "RP": 420,
-        "Offer": 395
+        "ProductID": 164,
+        "ProductName": "SUNSILK  18O  ML  GOLDEN",
+        "RetailPrice": 420,
+        "OfferPrice": 395
     },
     {
-        "id": 165,
-        "name": "SUNSILK  36O  ML GOLDEN",
-        "RP": 720,
-        "Offer": 680
+        "ProductID": 165,
+        "ProductName": "SUNSILK  36O  ML GOLDEN",
+        "RetailPrice": 720,
+        "OfferPrice": 680
     },
     {
-        "id": 166,
-        "name": "SUNSILK  36O  ML PINK",
-        "RP": 720,
-        "Offer": 680
+        "ProductID": 166,
+        "ProductName": "SUNSILK  36O  ML PINK",
+        "RetailPrice": 720,
+        "OfferPrice": 680
     },
     {
-        "id": 167,
-        "name": "HEAD & SHOULDERS 185  ML BLACK",
-        "RP": 470,
-        "Offer": 440
+        "ProductID": 167,
+        "ProductName": "HEAD & SHOULDERS 185  ML BLACK",
+        "RetailPrice": 470,
+        "OfferPrice": 440
     },
     {
-        "id": 168,
-        "name": "HEAD & SHOULDERS 185  ML NEEM",
-        "RP": 470,
-        "Offer": 440
+        "ProductID": 168,
+        "ProductName": "HEAD & SHOULDERS 185  ML NEEM",
+        "RetailPrice": 470,
+        "OfferPrice": 440
     },
     {
-        "id": 169,
-        "name": "HEAD & SHOULDERS 185  ML MENTHOL",
-        "RP": 470,
-        "Offer": 440
+        "ProductID": 169,
+        "ProductName": "HEAD & SHOULDERS 185  ML MENTHOL",
+        "RetailPrice": 470,
+        "OfferPrice": 440
     },
     {
-        "id": 170,
-        "name": "HEAD & SHOULDERS 185  ML ANTI-HAIRFALL",
-        "RP": 470,
-        "Offer": 440
+        "ProductID": 170,
+        "ProductName": "HEAD & SHOULDERS 185  ML ANTI-HAIRFALL",
+        "RetailPrice": 470,
+        "OfferPrice": 440
     },
     {
-        "id": 171,
-        "name": "HEAD & SHOULDERS 185  ML BADAM",
-        "RP": 470,
-        "Offer": 440
+        "ProductID": 171,
+        "ProductName": "HEAD & SHOULDERS 185  ML BADAM",
+        "RetailPrice": 470,
+        "OfferPrice": 440
     },
     {
-        "id": 172,
-        "name": "PANTENE  185  ML GREEN",
-        "RP": 450,
-        "Offer": 420
+        "ProductID": 172,
+        "ProductName": "PANTENE  185  ML GREEN",
+        "RetailPrice": 450,
+        "OfferPrice": 420
     },
     {
-        "id": 173,
-        "name": "PANTENE  185  ML BLACK",
-        "RP": 450,
-        "Offer": 420
+        "ProductID": 173,
+        "ProductName": "PANTENE  185  ML BLACK",
+        "RetailPrice": 450,
+        "OfferPrice": 420
     },
     {
-        "id": 174,
-        "name": "PALMOLIVE  185  ML GREEN",
-        "RP": 390,
-        "Offer": 345
+        "ProductID": 174,
+        "ProductName": "PALMOLIVE  185  ML GREEN",
+        "RetailPrice": 390,
+        "OfferPrice": 345
     },
     {
-        "id": 175,
-        "name": "PALMOLIVE  185  ML PINK",
-        "RP": 390,
-        "Offer": 345
+        "ProductID": 175,
+        "ProductName": "PALMOLIVE  185  ML PINK",
+        "RetailPrice": 390,
+        "OfferPrice": 345
     },
     {
-        "id": 176,
-        "name": "TAPAL TEZDUM 6  GM  (20 PS)",
-        "RP": 10,
-        "Offer": 185
+        "ProductID": 176,
+        "ProductName": "TAPAL TEZDUM 6  GM  (20 PS)",
+        "RetailPrice": 10,
+        "OfferPrice": 185
     },
     {
-        "id": 177,
-        "name": "TAPAL TEZDUM 13  GM  (10 PS)",
-        "RP": 20,
-        "Offer": 187
+        "ProductID": 177,
+        "ProductName": "TAPAL TEZDUM 13  GM  (10 PS)",
+        "RetailPrice": 20,
+        "OfferPrice": 187
     },
     {
-        "id": 178,
-        "name": "TAPAL DANEDAR 14 GM",
-        "RP": 30,
-        "Offer": 575
+        "ProductID": 178,
+        "ProductName": "TAPAL DANEDAR 14 GM",
+        "RetailPrice": 30,
+        "OfferPrice": 575
     },
     {
-        "id": 179,
-        "name": "TAPAL TEABAG 5O PS",
-        "RP": 500,
-        "Offer": 470
+        "ProductID": 179,
+        "ProductName": "TAPAL TEABAG 5O PS",
+        "RetailPrice": 500,
+        "OfferPrice": 470
     },
     {
-        "id": 180,
-        "name": "TAPAL TEABAG 1OO PS",
-        "RP": 1000,
-        "Offer": 940
+        "ProductID": 180,
+        "ProductName": "TAPAL TEABAG 1OO PS",
+        "RetailPrice": 1000,
+        "OfferPrice": 940
     },
     {
-        "id": 181,
-        "name": "TAPAL GREEN TEA LEMON TEABAG",
-        "RP": 250,
-        "Offer": 239
+        "ProductID": 181,
+        "ProductName": "TAPAL GREEN TEA LEMON TEABAG",
+        "RetailPrice": 250,
+        "OfferPrice": 239
     },
     {
-        "id": 182,
-        "name": "PANADOL",
-        "RP": 640.81,
-        "Offer": 620
+        "ProductID": 182,
+        "ProductName": "PANADOL",
+        "RetailPrice": 640.81,
+        "OfferPrice": 620
     },
     {
-        "id": 183,
-        "name": "HASHMI ISPAGHOL SACHET",
-        "RP": 1080,
-        "Offer": 990
+        "ProductID": 183,
+        "ProductName": "HASHMI ISPAGHOL SACHET",
+        "RetailPrice": 1080,
+        "OfferPrice": 990
     },
     {
-        "id": 184,
-        "name": "HASHMI ISPAGHOL JAR 85 GM",
-        "RP": 800,
-        "Offer": 740
+        "ProductID": 184,
+        "ProductName": "HASHMI ISPAGHOL JAR 85 GM",
+        "RetailPrice": 800,
+        "OfferPrice": 740
     },
     {
-        "id": 185,
-        "name": "PEDITRAL ORS SACHET ORANGE",
-        "RP": 675,
-        "Offer": 670
+        "ProductID": 185,
+        "ProductName": "PEDITRAL ORS SACHET ORANGE",
+        "RetailPrice": 675,
+        "OfferPrice": 670
     },
     {
-        "id": 186,
-        "name": "JOHAR JOSHANDA",
-        "RP": 25,
-        "Offer": 595
+        "ProductID": 186,
+        "ProductName": "JOHAR JOSHANDA",
+        "RetailPrice": 25,
+        "OfferPrice": 595
     },
     {
-        "id": 187,
-        "name": "ENO SACHET LEMON",
-        "RP": 15,
-        "Offer": 200
+        "ProductID": 187,
+        "ProductName": "ENO SACHET LEMON",
+        "RetailPrice": 15,
+        "OfferPrice": 200
     },
     {
-        "id": 188,
-        "name": "ENO SACHET REGULAR",
-        "RP": 15,
-        "Offer": 200
+        "ProductID": 188,
+        "ProductName": "ENO SACHET REGULAR",
+        "RetailPrice": 15,
+        "OfferPrice": 200
     },
     {
-        "id": 189,
-        "name": "SANIPLAST",
-        "RP": 350,
-        "Offer": 310
+        "ProductID": 189,
+        "ProductName": "SANIPLAST",
+        "RetailPrice": 350,
+        "OfferPrice": 310
     },
     {
-        "id": 190,
-        "name": "GLAXOSE-D 400 GM",
-        "RP": 280,
-        "Offer": 260
+        "ProductID": 190,
+        "ProductName": "GLAXOSE-D 400 GM",
+        "RetailPrice": 280,
+        "OfferPrice": 260
     },
     {
-        "id": 191,
-        "name": "CALCEE SACHET",
-        "RP": 170,
-        "Offer": 152
+        "ProductID": 191,
+        "ProductName": "CALCEE SACHET",
+        "RetailPrice": 170,
+        "OfferPrice": 152
     },
     {
-        "id": 192,
-        "name": "SHAN MASALA SINGLE TANDOORI [19]",
-        "RP": 130,
-        "Offer": 115
+        "ProductID": 192,
+        "ProductName": "SHAN MASALA SINGLE TANDOORI [19]",
+        "RetailPrice": 130,
+        "OfferPrice": 115
     },
     {
-        "id": 193,
-        "name": "SHAN TEZ  LAL  MIRCH 45 GM",
-        "RP": 120,
-        "Offer": 113
+        "ProductID": 193,
+        "ProductName": "SHAN TEZ  LAL  MIRCH 45 GM",
+        "RetailPrice": 120,
+        "OfferPrice": 113
     },
     {
-        "id": 194,
-        "name": "SHAN TEZ  LAL  MIRCH 36O GM",
-        "RP": 835,
-        "Offer": 788
+        "ProductID": 194,
+        "ProductName": "SHAN TEZ  LAL  MIRCH 36O GM",
+        "RetailPrice": 835,
+        "OfferPrice": 788
     },
     {
-        "id": 195,
-        "name": "SHAN HALDEE  POWDER 5O GM",
-        "RP": 90,
-        "Offer": 85
+        "ProductID": 195,
+        "ProductName": "SHAN HALDEE  POWDER 5O GM",
+        "RetailPrice": 90,
+        "OfferPrice": 85
     },
     {
-        "id": 196,
-        "name": "SHAN TEEKHI  KALI  MIRCH 25 GM",
-        "RP": 110,
-        "Offer": 104
+        "ProductID": 196,
+        "ProductName": "SHAN TEEKHI  KALI  MIRCH 25 GM",
+        "RetailPrice": 110,
+        "OfferPrice": 104
     },
     {
-        "id": 197,
-        "name": "SHAN TEEKHI  KALI  MIRCH 5O GM",
-        "RP": 210,
-        "Offer": 198
+        "ProductID": 197,
+        "ProductName": "SHAN TEEKHI  KALI  MIRCH 5O GM",
+        "RetailPrice": 210,
+        "OfferPrice": 198
     },
     {
-        "id": 198,
-        "name": "SHAN GARAM  MASALA 25 GM",
-        "RP": 165,
-        "Offer": 156
+        "ProductID": 198,
+        "ProductName": "SHAN GARAM  MASALA 25 GM",
+        "RetailPrice": 165,
+        "OfferPrice": 156
     },
     {
-        "id": 199,
-        "name": "SHAN GARAM  MASALA 5O GM",
-        "RP": 320,
-        "Offer": 302
+        "ProductID": 199,
+        "ProductName": "SHAN GARAM  MASALA 5O GM",
+        "RetailPrice": 320,
+        "OfferPrice": 302
     },
     {
-        "id": 200,
-        "name": "SHAN QASURI  METHI  25 GM",
-        "RP": 60,
-        "Offer": 57
+        "ProductID": 200,
+        "ProductName": "SHAN QASURI  METHI  25 GM",
+        "RetailPrice": 60,
+        "OfferPrice": 57
     },
     {
-        "id": 201,
-        "name": "SHAN TAAZA  DHANIA 5O GM",
-        "RP": 95,
-        "Offer": 91
+        "ProductID": 201,
+        "ProductName": "SHAN TAAZA  DHANIA 5O GM",
+        "RetailPrice": 95,
+        "OfferPrice": 91
     },
     {
-        "id": 202,
-        "name": "NESTLE COFFEE 5O GM",
-        "RP": null,
-        "Offer": 880
+        "ProductID": 202,
+        "ProductName": "NESTLE COFFEE 5O GM",
+        "RetailPrice": null,
+        "OfferPrice": 880
     },
     {
-        "id": 203,
-        "name": "KOLSON LASAGNA",
-        "RP": null,
-        "Offer": 325
+        "ProductID": 203,
+        "ProductName": "KOLSON LASAGNA",
+        "RetailPrice": null,
+        "OfferPrice": 325
     },
     {
-        "id": 204,
-        "name": "KOLSON SPAGHETTI  450  GM",
-        "RP": null,
-        "Offer": 182
+        "ProductID": 204,
+        "ProductName": "KOLSON SPAGHETTI  450  GM",
+        "RetailPrice": null,
+        "OfferPrice": 182
     },
     {
-        "id": 205,
-        "name": "KOLSON LASAGNA",
-        "RP": null,
-        "Offer": 178
+        "ProductID": 205,
+        "ProductName": "KOLSON LASAGNA",
+        "RetailPrice": null,
+        "OfferPrice": 178
     },
     {
-        "id": 206,
-        "name": "CRAZY JUICE 25O ML ORANGE",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 206,
+        "ProductName": "CRAZY JUICE 25O ML ORANGE",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 207,
-        "name": "CRAZY JUICE 25O ML PEACH",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 207,
+        "ProductName": "CRAZY JUICE 25O ML PEACH",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 208,
-        "name": "CRAZY JUICE 25O ML ANAAR",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 208,
+        "ProductName": "CRAZY JUICE 25O ML ANAAR",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 209,
-        "name": "CRAZY JUICE 25O ML PINEAPPLE",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 209,
+        "ProductName": "CRAZY JUICE 25O ML PINEAPPLE",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 210,
-        "name": "CRAZY JUICE 25O ML APPLE",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 210,
+        "ProductName": "CRAZY JUICE 25O ML APPLE",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 211,
-        "name": "CRAZY JUICE 25O ML MANGO",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 211,
+        "ProductName": "CRAZY JUICE 25O ML MANGO",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 212,
-        "name": "CRAZY JUICE 25O ML LYCHEE",
-        "RP": 110,
-        "Offer": 85.98
+        "ProductID": 212,
+        "ProductName": "CRAZY JUICE 25O ML LYCHEE",
+        "RetailPrice": 110,
+        "OfferPrice": 85.98
     },
     {
-        "id": 213,
-        "name": "CRAZY JUICE 1 LTR ORANGE",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 213,
+        "ProductName": "CRAZY JUICE 1 LTR ORANGE",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 214,
-        "name": "CRAZY JUICE 1 LTR PEACH",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 214,
+        "ProductName": "CRAZY JUICE 1 LTR PEACH",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 215,
-        "name": "CRAZY JUICE 1 LTR ANAAR",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 215,
+        "ProductName": "CRAZY JUICE 1 LTR ANAAR",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 216,
-        "name": "CRAZY JUICE 1 LTR PINEAPPLE",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 216,
+        "ProductName": "CRAZY JUICE 1 LTR PINEAPPLE",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 217,
-        "name": "CRAZY JUICE 1 LTR APPLE",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 217,
+        "ProductName": "CRAZY JUICE 1 LTR APPLE",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 218,
-        "name": "CRAZY JUICE 1 LTR MANGO",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 218,
+        "ProductName": "CRAZY JUICE 1 LTR MANGO",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 219,
-        "name": "CRAZY JUICE 1 LTR LYCHEE",
-        "RP": 300,
-        "Offer": 243.17
+        "ProductID": 219,
+        "ProductName": "CRAZY JUICE 1 LTR LYCHEE",
+        "RetailPrice": 300,
+        "OfferPrice": 243.17
     },
     {
-        "id": 220,
-        "name": "AQUAFINA  WATER  33O ML",
-        "RP": null,
-        "Offer": 350
+        "ProductID": 220,
+        "ProductName": "AQUAFINA  WATER  33O ML",
+        "RetailPrice": null,
+        "OfferPrice": 350
     },
     {
-        "id": 221,
-        "name": "AQUAFINA  WATER  5OO ML",
-        "RP": null,
-        "Offer": 440
+        "ProductID": 221,
+        "ProductName": "AQUAFINA  WATER  5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 440
     },
     {
-        "id": 222,
-        "name": "AQUAFINA  WATER  1.5 LTR",
-        "RP": null,
-        "Offer": 470
+        "ProductID": 222,
+        "ProductName": "AQUAFINA  WATER  1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 470
     },
     {
-        "id": 223,
-        "name": "NESTLE  WATER  33O ML",
-        "RP": null,
-        "Offer": 480
+        "ProductID": 223,
+        "ProductName": "NESTLE  WATER  33O ML",
+        "RetailPrice": null,
+        "OfferPrice": 480
     },
     {
-        "id": 224,
-        "name": "NESTLE  WATER  5OO ML",
-        "RP": null,
-        "Offer": 510
+        "ProductID": 224,
+        "ProductName": "NESTLE  WATER  5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 510
     },
     {
-        "id": 225,
-        "name": "NESTLE  WATER 1.5 LTR",
-        "RP": null,
-        "Offer": 480
+        "ProductID": 225,
+        "ProductName": "NESTLE  WATER 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 480
     },
     {
-        "id": 226,
-        "name": "NESTLE  WATER  5 LTR",
-        "RP": null,
-        "Offer": 480
+        "ProductID": 226,
+        "ProductName": "NESTLE  WATER  5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 480
     },
     {
-        "id": 227,
-        "name": "AAB-E-DUBAI  WATER 33O ML",
-        "RP": null,
-        "Offer": 530
+        "ProductID": 227,
+        "ProductName": "AAB-E-DUBAI  WATER 33O ML",
+        "RetailPrice": null,
+        "OfferPrice": 530
     },
     {
-        "id": 228,
-        "name": "AAB-E-DUBAI  WATER 5OO ML",
-        "RP": null,
-        "Offer": 650
+        "ProductID": 228,
+        "ProductName": "AAB-E-DUBAI  WATER 5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 650
     },
     {
-        "id": 229,
-        "name": "AAB-E-DUBAI  WATER 1.5 LTR",
-        "RP": null,
-        "Offer": 650
+        "ProductID": 229,
+        "ProductName": "AAB-E-DUBAI  WATER 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 650
     },
     {
-        "id": 230,
-        "name": "NEXT  CAN 25O ML COLA",
-        "RP": null,
-        "Offer": 980
+        "ProductID": 230,
+        "ProductName": "NEXT  CAN 25O ML COLA",
+        "RetailPrice": null,
+        "OfferPrice": 980
     },
     {
-        "id": 231,
-        "name": "NEXT  CAN 25O ML FIZZUP",
-        "RP": null,
-        "Offer": 980
+        "ProductID": 231,
+        "ProductName": "NEXT  CAN 25O ML FIZZUP",
+        "RetailPrice": null,
+        "OfferPrice": 980
     },
     {
-        "id": 232,
-        "name": "NEXT  BUDDY COLA",
-        "RP": null,
-        "Offer": 600
+        "ProductID": 232,
+        "ProductName": "NEXT  BUDDY COLA",
+        "RetailPrice": null,
+        "OfferPrice": 600
     },
     {
-        "id": 233,
-        "name": "NEXT  BUDDY FIZZUP",
-        "RP": null,
-        "Offer": 600
+        "ProductID": 233,
+        "ProductName": "NEXT  BUDDY FIZZUP",
+        "RetailPrice": null,
+        "OfferPrice": 600
     },
     {
-        "id": 234,
-        "name": "NEXT  5OO  ML COLA",
-        "RP": null,
-        "Offer": 780
+        "ProductID": 234,
+        "ProductName": "NEXT  5OO  ML COLA",
+        "RetailPrice": null,
+        "OfferPrice": 780
     },
     {
-        "id": 235,
-        "name": "NEXT  5OO  ML FIZZUP",
-        "RP": null,
-        "Offer": 780
+        "ProductID": 235,
+        "ProductName": "NEXT  5OO  ML FIZZUP",
+        "RetailPrice": null,
+        "OfferPrice": 780
     },
     {
-        "id": 236,
-        "name": "NEXT  1  LTR  COLA",
-        "RP": null,
-        "Offer": 660
+        "ProductID": 236,
+        "ProductName": "NEXT  1  LTR  COLA",
+        "RetailPrice": null,
+        "OfferPrice": 660
     },
     {
-        "id": 237,
-        "name": "NEXT  1  LTR  FIZZUP",
-        "RP": null,
-        "Offer": 660
+        "ProductID": 237,
+        "ProductName": "NEXT  1  LTR  FIZZUP",
+        "RetailPrice": null,
+        "OfferPrice": 660
     },
     {
-        "id": 238,
-        "name": "NEXT  1.5  LTR  COLA",
-        "RP": null,
-        "Offer": 820
+        "ProductID": 238,
+        "ProductName": "NEXT  1.5  LTR  COLA",
+        "RetailPrice": null,
+        "OfferPrice": 820
     },
     {
-        "id": 239,
-        "name": "NEXT  1.5  LTR  FIZZUP",
-        "RP": null,
-        "Offer": 820
+        "ProductID": 239,
+        "ProductName": "NEXT  1.5  LTR  FIZZUP",
+        "RetailPrice": null,
+        "OfferPrice": 820
     },
     {
-        "id": 240,
-        "name": "NEXT  2.25  LTR  JUMBO COLA",
-        "RP": null,
-        "Offer": 780
+        "ProductID": 240,
+        "ProductName": "NEXT  2.25  LTR  JUMBO COLA",
+        "RetailPrice": null,
+        "OfferPrice": 780
     },
     {
-        "id": 241,
-        "name": "NEXT  2.25  LTR  JUMBO FIZZUP",
-        "RP": null,
-        "Offer": 780
+        "ProductID": 241,
+        "ProductName": "NEXT  2.25  LTR  JUMBO FIZZUP",
+        "RetailPrice": null,
+        "OfferPrice": 780
     },
     {
-        "id": 242,
-        "name": "BIGG  APPLE 3OO ML",
-        "RP": null,
-        "Offer": 580
+        "ProductID": 242,
+        "ProductName": "BIGG  APPLE 3OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 580
     },
     {
-        "id": 243,
-        "name": "BIGG  APPLE 5OO ML",
-        "RP": null,
-        "Offer": 940
+        "ProductID": 243,
+        "ProductName": "BIGG  APPLE 5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 940
     },
     {
-        "id": 244,
-        "name": "BIGG  APPLE 1.5 LTR",
-        "RP": null,
-        "Offer": 940
+        "ProductID": 244,
+        "ProductName": "BIGG  APPLE 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 940
     },
     {
-        "id": 245,
-        "name": "BIGG  LYCHEE 3OO ML",
-        "RP": null,
-        "Offer": 580
+        "ProductID": 245,
+        "ProductName": "BIGG  LYCHEE 3OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 580
     },
     {
-        "id": 246,
-        "name": "BIGG  LYCHEE 5OO ML",
-        "RP": null,
-        "Offer": 940
+        "ProductID": 246,
+        "ProductName": "BIGG  LYCHEE 5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 940
     },
     {
-        "id": 247,
-        "name": "BIGG  LYCHEE 1.5 LTR",
-        "RP": null,
-        "Offer": 940
+        "ProductID": 247,
+        "ProductName": "BIGG  LYCHEE 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 940
     },
     {
-        "id": 248,
-        "name": "25O  ML CAN  PEPSI",
-        "RP": null,
-        "Offer": 920
+        "ProductID": 248,
+        "ProductName": "25O  ML CAN  PEPSI",
+        "RetailPrice": null,
+        "OfferPrice": 920
     },
     {
-        "id": 249,
-        "name": "25O  ML CAN  7UP",
-        "RP": null,
-        "Offer": 920
+        "ProductID": 249,
+        "ProductName": "25O  ML CAN  7UP",
+        "RetailPrice": null,
+        "OfferPrice": 920
     },
     {
-        "id": 250,
-        "name": "25O  ML CAN  MIRINDA",
-        "RP": null,
-        "Offer": 920
+        "ProductID": 250,
+        "ProductName": "25O  ML CAN  MIRINDA",
+        "RetailPrice": null,
+        "OfferPrice": 920
     },
     {
-        "id": 251,
-        "name": "25O  ML CAN  DEW",
-        "RP": null,
-        "Offer": 920
+        "ProductID": 251,
+        "ProductName": "25O  ML CAN  DEW",
+        "RetailPrice": null,
+        "OfferPrice": 920
     },
     {
-        "id": 252,
-        "name": "25O  ML CAN  PEPSI DIET",
-        "RP": null,
-        "Offer": 920
+        "ProductID": 252,
+        "ProductName": "25O  ML CAN  PEPSI DIET",
+        "RetailPrice": null,
+        "OfferPrice": 920
     },
     {
-        "id": 253,
-        "name": "25O  ML CAN  7UP DIET",
-        "RP": null,
-        "Offer": 920
+        "ProductID": 253,
+        "ProductName": "25O  ML CAN  7UP DIET",
+        "RetailPrice": null,
+        "OfferPrice": 920
     },
     {
-        "id": 254,
-        "name": "3OO  ML  BUDDY  PEPSI",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 254,
+        "ProductName": "3OO  ML  BUDDY  PEPSI",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 255,
-        "name": "3OO  ML  BUDDY  7UP",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 255,
+        "ProductName": "3OO  ML  BUDDY  7UP",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 256,
-        "name": "3OO  ML  BUDDY  MIRINDA",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 256,
+        "ProductName": "3OO  ML  BUDDY  MIRINDA",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 257,
-        "name": "3OO  ML  BUDDY  DEW",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 257,
+        "ProductName": "3OO  ML  BUDDY  DEW",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 258,
-        "name": "3OO  ML  BUDDY  PEPSI DIET",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 258,
+        "ProductName": "3OO  ML  BUDDY  PEPSI DIET",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 259,
-        "name": "3OO  ML  BUDDY  7UP DIET",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 259,
+        "ProductName": "3OO  ML  BUDDY  7UP DIET",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 260,
-        "name": "STING  CAN  25O  ML KHI",
-        "RP": null,
-        "Offer": 960
+        "ProductID": 260,
+        "ProductName": "STING  CAN  25O  ML KHI",
+        "RetailPrice": null,
+        "OfferPrice": 960
     },
     {
-        "id": 261,
-        "name": "STING  BUDDY  345  ML KHI",
-        "RP": null,
-        "Offer": 750
+        "ProductID": 261,
+        "ProductName": "STING  BUDDY  345  ML KHI",
+        "RetailPrice": null,
+        "OfferPrice": 750
     },
     {
-        "id": 262,
-        "name": "STING  5OO  ML KHI",
-        "RP": null,
-        "Offer": 1160
+        "ProductID": 262,
+        "ProductName": "STING  5OO  ML KHI",
+        "RetailPrice": null,
+        "OfferPrice": 1160
     },
     {
-        "id": 263,
-        "name": "SLICE PET 355 ML",
-        "RP": null,
-        "Offer": 695
+        "ProductID": 263,
+        "ProductName": "SLICE PET 355 ML",
+        "RetailPrice": null,
+        "OfferPrice": 695
     },
     {
-        "id": 264,
-        "name": "SLICE  1  LTR  PET",
-        "RP": null,
-        "Offer": 960
+        "ProductID": 264,
+        "ProductName": "SLICE  1  LTR  PET",
+        "RetailPrice": null,
+        "OfferPrice": 960
     },
     {
-        "id": 265,
-        "name": "SLICE  TETRA  PACK",
-        "RP": null,
-        "Offer": 1020
+        "ProductID": 265,
+        "ProductName": "SLICE  TETRA  PACK",
+        "RetailPrice": null,
+        "OfferPrice": 1020
     },
     {
-        "id": 266,
-        "name": "PAKOLA CAN 25O ML",
-        "RP": null,
-        "Offer": 1150
+        "ProductID": 266,
+        "ProductName": "PAKOLA CAN 25O ML",
+        "RetailPrice": null,
+        "OfferPrice": 1150
     },
     {
-        "id": 267,
-        "name": "PAKOLA BUDDY 3OO ML",
-        "RP": null,
-        "Offer": 600
+        "ProductID": 267,
+        "ProductName": "PAKOLA BUDDY 3OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 600
     },
     {
-        "id": 268,
-        "name": "PAKOLA 5OO ML",
-        "RP": null,
-        "Offer": 980
+        "ProductID": 268,
+        "ProductName": "PAKOLA 5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 980
     },
     {
-        "id": 269,
-        "name": "PAKOLA 1.5 LTR",
-        "RP": null,
-        "Offer": 980
+        "ProductID": 269,
+        "ProductName": "PAKOLA 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 980
     },
     {
-        "id": 270,
-        "name": "VIMTO  1.5 LTR ",
-        "RP": null,
-        "Offer": 900
+        "ProductID": 270,
+        "ProductName": "VIMTO  1.5 LTR ",
+        "RetailPrice": null,
+        "OfferPrice": 900
     },
     {
-        "id": 271,
-        "name": "PAKOLA  LYCHEE 1.5 LTR",
-        "RP": null,
-        "Offer": 900
+        "ProductID": 271,
+        "ProductName": "PAKOLA  LYCHEE 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 900
     },
     {
-        "id": 272,
-        "name": "PAKOLA WATER 33O ML",
-        "RP": null,
-        "Offer": 340
+        "ProductID": 272,
+        "ProductName": "PAKOLA WATER 33O ML",
+        "RetailPrice": null,
+        "OfferPrice": 340
     },
     {
-        "id": 273,
-        "name": "PAKOLA WATER 5OO ML",
-        "RP": null,
-        "Offer": 400
+        "ProductID": 273,
+        "ProductName": "PAKOLA WATER 5OO ML",
+        "RetailPrice": null,
+        "OfferPrice": 400
     },
     {
-        "id": 274,
-        "name": "PAKOLA WATER 1.5 LTR",
-        "RP": null,
-        "Offer": 400
+        "ProductID": 274,
+        "ProductName": "PAKOLA WATER 1.5 LTR",
+        "RetailPrice": null,
+        "OfferPrice": 400
     },
     {
-        "id": 275,
-        "name": "SMILY JUICE MANGO",
-        "RP": null,
-        "Offer": 580
+        "ProductID": 275,
+        "ProductName": "SMILY JUICE MANGO",
+        "RetailPrice": null,
+        "OfferPrice": 580
     }
 ]
