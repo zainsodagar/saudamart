@@ -1,0 +1,40 @@
+
+        /* Custom styles for badges */
+        .table-responsive {
+            position: relative;
+            overflow: auto;
+            height: 400px; /* Adjust height as needed */
+        }
+
+        .table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10; /* Ensures the header is above the other content */
+            background-color: #343a40; /* Match this with your table header background */
+            color: white; /* Change text color if needed */
+        }
+        .qty-badge {
+            background-color: #007bff;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .btn-custom {
+            margin-right: 10px;
+        }
+        /* Responsive table adjustments */
+        .table-responsive {
+            overflow-x: auto;
+        }
+        /* Flexbox for mobile inputs */
+        @media (max-width: 576px) {
+            .input-group-mobile {
+                flex-direction: column;
+            }
+        }
+    
