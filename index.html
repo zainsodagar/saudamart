@@ -58,7 +58,7 @@
             <h1>Sauda Mart</h1>
             
         </div>
-        <p>Current Date: <span id="current-date"></span> &nbsp; | &nbsp; Delivery Date: 
+        <p>Order Date: <span id="current-date"></span> &nbsp; | &nbsp; Delivery Date: 
             <input type="date" id="delivery-date" class="form-control d-inline-block" style="width: auto;" required>
         </p>
         
@@ -296,18 +296,6 @@
     qtyInput.value = '';
 }
 
-function updateOfferPrice(cell, index) {
-    const input = document.createElement('input');
-    input.type = 'number';
-    input.value = cell.innerText;
-    cell.innerHTML = '';
-    cell.appendChild(input);
-    input.focus();
-    input.onblur = function() {
-        updatedProducts[index].OfferPrice = input.value;
-        cell.innerHTML = input.value;
-    };
-}
 
        // Function to handle preview
        function previewTable() {
