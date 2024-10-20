@@ -296,9 +296,18 @@
     qtyInput.value = '';
 }
 
-        function updateOfferPrice(cell, index) {
-            updatedProducts[index].OfferPrice = cell.innerText;
-        }
+function updateOfferPrice(cell, index) {
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.value = cell.innerText;
+    cell.innerHTML = '';
+    cell.appendChild(input);
+    input.focus();
+    input.onblur = function() {
+        updatedProducts[index].OfferPrice = input.value;
+        cell.innerHTML = input.value;
+    };
+}
 
        // Function to handle preview
        function previewTable() {
