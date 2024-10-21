@@ -70,19 +70,19 @@
                 .catch(error => console.error('Error loading data:', error));
         });
 
-        function updateOfferPrice(cell, index) {
-    // Check if the input already exists to prevent creating multiple inputs
-    if (cell.querySelector('input')) return;
+    //     function updateOfferPrice(cell, index) {
+    // // Check if the input already exists to prevent creating multiple inputs
+    // if (cell.querySelector('input')) return;
 
-    // Create a new input element
-    const input = document.createElement('input');
-    input.type = 'number'; // Set the input type to number
-    input.value = cell.innerText; // Set the current value
-    //input.style.width = '100%'; // Optional: make the input take full width
-    input.style.border = 'none'; // Optional: remove border for better appearance
-    input.style.outline = 'none'; // Optional: remove outline for better appearance
-    cell.innerHTML = ''; // Clear the cell content
-    cell.appendChild(input); // Append the input to the cell
+    // // Create a new input element
+    // const input = document.createElement('input');
+    // input.type = 'number'; // Set the input type to number
+    // input.value = cell.innerText; // Set the current value
+    // //input.style.width = '100%'; // Optional: make the input take full width
+    // input.style.border = 'none'; // Optional: remove border for better appearance
+    // input.style.outline = 'none'; // Optional: remove outline for better appearance
+    // cell.innerHTML = ''; // Clear the cell content
+    // cell.appendChild(input); // Append the input to the cell
 
     // Focus on the input after a short delay to ensure the keyboard appears
     // setTimeout(() => {
@@ -90,10 +90,10 @@
     // }, 0);
 
     // Handle the blur event to save the value
-    input.onblur = function() {
-        updatedProducts[index].OfferPrice = input.value; // Update the OfferPrice
-        cell.innerHTML = input.value; // Replace the input with the updated value
-    };
+    // input.onblur = function() {
+    //     updatedProducts[index].OfferPrice = input.value; // Update the OfferPrice
+    //     cell.innerHTML = input.value; // Replace the input with the updated value
+    // };
 
     // Optional: Handle the Enter key to save the value
     // input.onkeydown = function(event) {
@@ -108,6 +108,9 @@
     //         cell.innerHTML = input.value; // Revert to original value
     //     }
     // };
+//}
+function updateOfferPrice(cell, index) {
+    updatedProducts[index].OfferPrice = cell.innerText;
 }
 
         function applyQuantity() {
