@@ -78,16 +78,16 @@
     const input = document.createElement('input');
     input.type = 'number'; // Set the input type to number
     input.value = cell.innerText; // Set the current value
-    input.style.width = '100%'; // Optional: make the input take full width
+    //input.style.width = '100%'; // Optional: make the input take full width
     input.style.border = 'none'; // Optional: remove border for better appearance
     input.style.outline = 'none'; // Optional: remove outline for better appearance
     cell.innerHTML = ''; // Clear the cell content
     cell.appendChild(input); // Append the input to the cell
 
     // Focus on the input after a short delay to ensure the keyboard appears
-    setTimeout(() => {
-        input.focus(); // Focus on the input to show the keyboard
-    }, 0);
+    // setTimeout(() => {
+    //     input.focus(); // Focus on the input to show the keyboard
+    // }, 0);
 
     // Handle the blur event to save the value
     input.onblur = function() {
