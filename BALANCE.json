@@ -27,7 +27,7 @@
         "previousBalance": 193906
     },
     "BIS CGHS": {
-        "previousBalance": 256163
+        "previousBalance": 32000
     },
     "BIS MINI MKT": {
         "previousBalance": 64698
@@ -43,5 +43,20 @@
     },
     "NEW SONY CLIFTON": {
         "previousBalance": 8702
+    },
+    "CAUSWAY GULSHAN": {
+        "previousBalance": 150000
+    },
+    "HASMART MALIK": {
+        "previousBalance": 52510
+    },
+    "DISCOUNT GULSHAN": {
+        "previousBalance": 90648
+    },
+    "ZEESHAN BAKERY": {
+        "previousBalance": 7472
+    },
+    "PLATINUM GULSHAN": {
+        "previousBalance": 28516
     }
 }

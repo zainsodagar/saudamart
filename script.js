@@ -109,6 +109,44 @@
     //     }
     // };
 //}
+function showOutstandingBills() {
+    // Sample data for outstanding bills
+    const outstandingBills = [
+        { serialNo: 1, billNo: 'B001', billDate: '2023-10-01', billAmount: 100, scannedImage: 'path/to/image1.jpg' },
+        { serialNo: 2, billNo: 'B002', billDate: '2023-10-05', billAmount: 150, scannedImage: 'path/to/image2.jpg' },
+        // Add more bills as needed
+    ];
+
+    // Clear the existing table body
+    const billsTableBody = document.getElementById('billsTableBody');
+    billsTableBody.innerHTML = '';
+
+    // Calculate total outstanding amount
+    let totalAmount = 0;
+
+    // Populate the table
+    outstandingBills.forEach(bill => {
+        totalAmount += bill.billAmount;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${bill.serialNo}</td>
+            <td>${bill.billNo}</td>
+            <td>${bill.billDate}</td>
+            <td>${bill.billAmount}</td>
+            <td><img src="${bill.scannedImage}" alt="Bill Image" style="width: 100px; height: auto;"></td>
+        `;
+        billsTableBody.appendChild(row);
+    });
+
+    // Display total amount
+    document.getElementById('totalOutstanding').innerText = `Total Outstanding: $${totalAmount}`;
+
+    // Show the modal
+    const modal = new bootstrap.Modal(document.getElementById('outstandingBillsModal'));
+    modal.show();
+}
+
 function updateOfferPrice(cell, index) {
     updatedProducts[index].OfferPrice = cell.innerText;
 }
